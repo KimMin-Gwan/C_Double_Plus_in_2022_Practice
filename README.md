@@ -2,7 +2,7 @@
  ### Notice   
  - These solutions are based on Yeungnam University Object-oriented Programming and Data Structure Class Practice  
  - All content is used to create my portfolio and back up materials.  
- - If you are a student participating in this class, do not copy and use the solutions  
+ - If you are taking this class and want to use these solutions, please contact me.
    
  If there is an error, please contact me by e-mail
  alsrhks2508@naver.com  

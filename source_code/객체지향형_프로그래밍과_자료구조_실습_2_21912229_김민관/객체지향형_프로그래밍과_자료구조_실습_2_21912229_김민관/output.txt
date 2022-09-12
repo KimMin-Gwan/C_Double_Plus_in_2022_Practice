@@ -1,0 +1,24 @@
+AD Jan. 1, 1 is    January  1,    1 (Monday)
+Today is  September 12, 2022 (Monday)
+New year's day of this year was    January  1, 2022 (Monday)
+Christmas of this year is   December 25, 2022 (Monday)
+ Sorry, today is not Christmas!
+ You must wait 104 day(s) to Christmas !
+
+Person p1 : 
+ Person [name: Hong, Gil-Dong      , birth date:    January  1, 2000 (Monday)]
+Person p2 : 
+ Person [name: Lee, Soo - Jeong    , birth date:  September  1, 2018 (Monday)]
+
+Generating array of persons ... 
+ Person [name: Humea               , birth date:   December 11, 1041 (Monday)]
+ Person [name: Fdxfir              , birth date:       June  6, 1464 (Monday)]
+ Person [name: Xggbwkf             , birth date:      April 25, 2436 (Monday)]
+ Person [name: Xwfnfozvsrtkj       , birth date:       July 16, 2447 (Monday)]
+ Person [name: Ggxrpnrvystm        , birth date:       June 29, 2711 (Monday)]
+ Person [name: Yycqp               , birth date:    January  6, 2842 (Monday)]
+ Person [name: Effmz               , birth date:    October  5, 2890 (Monday)]
+ Person [name: Kasvwsrenzk         , birth date:    January 22, 1623 (Monday)]
+ Person [name: Xtlsgy              , birth date:       July 21, 1118 (Monday)]
+ Person [name: Dpooefxzbco         , birth date:      March 23, 2977 (Monday)]
+

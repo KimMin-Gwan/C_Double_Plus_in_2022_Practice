@@ -1,0 +1,9 @@
+﻿  main.cpp
+C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\객체지향형_프로그래밍과_자료구조_실습_3_21912229_김민관\객체지향형_프로그래밍과_자료구조_실습_3_21912229_김민관\main.cpp(6,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\객체지향형_프로그래밍과_자료구조_실습_3_21912229_김민관\객체지향형_프로그래밍과_자료구조_실습_3_21912229_김민관\main.cpp(13,3): warning C4551: 함수 호출에 인수 목록이 없습니다.
+C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\객체지향형_프로그래밍과_자료구조_실습_3_21912229_김민관\객체지향형_프로그래밍과_자료구조_실습_3_21912229_김민관\main.cpp(19,3): warning C4551: 함수 호출에 인수 목록이 없습니다.
+  Mtrx.cpp
+C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\객체지향형_프로그래밍과_자료구조_실습_3_21912229_김민관\객체지향형_프로그래밍과_자료구조_실습_3_21912229_김민관\Mtrx.cpp(28,42): warning C4101: 'cnt' :참조되지 않은 지역 변수입니다.
+C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\객체지향형_프로그래밍과_자료구조_실습_3_21912229_김민관\객체지향형_프로그래밍과_자료구조_실습_3_21912229_김민관\Mtrx.cpp(28,32): warning C4101: 'num_data' :참조되지 않은 지역 변수입니다.
+  코드를 생성하고 있습니다...
+  객체지향형_프로그래밍과_자료구조_실습_3_21912229_김민관.vcxproj -> C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\객체지향형_프로그래밍과_자료구조_실습_3_21912229_김민관\x64\Debug\객체지향형_프로그래밍과_자료구조_실습_3_21912229_김민관.exe

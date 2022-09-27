@@ -52,10 +52,4 @@ void main()
 	mtrxG.fprintMtrx(fout);
 	fout.close();
 	//할당해제
-	mtrxA.~Mtrx();
-	mtrxB.~Mtrx();
-	mtrxC.~Mtrx();
-	mtrxD.~Mtrx();
-	mtrxE.~Mtrx();
-	mtrxF.~Mtrx();
 } // end of main()

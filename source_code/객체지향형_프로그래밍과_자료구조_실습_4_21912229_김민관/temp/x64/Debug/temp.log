@@ -1,0 +1,13 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: 중간 디렉터리(x64\Debug\)에 다른 프로젝트(temp.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
+  main.cpp
+C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\객체지향형_프로그래밍과_자료구조_실습_4_21912229_김민관\temp\main.cpp(17,3): warning C4551: 함수 호출에 인수 목록이 없습니다.
+C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\객체지향형_프로그래밍과_자료구조_실습_4_21912229_김민관\temp\main.cpp(24,3): warning C4551: 함수 호출에 인수 목록이 없습니다.
+C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\객체지향형_프로그래밍과_자료구조_실습_4_21912229_김민관\temp\main.cpp(12,6): warning C4101: 'n_row' :참조되지 않은 지역 변수입니다.
+C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\객체지향형_프로그래밍과_자료구조_실습_4_21912229_김민관\temp\main.cpp(12,13): warning C4101: 'n_col' :참조되지 않은 지역 변수입니다.
+  Mtrx.cpp
+C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\객체지향형_프로그래밍과_자료구조_실습_4_21912229_김민관\temp\Mtrx.cpp(9,24): warning C4101: 'cnt' :참조되지 않은 지역 변수입니다.
+C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\객체지향형_프로그래밍과_자료구조_실습_4_21912229_김민관\temp\Mtrx.cpp(10,9): warning C4101: 'd' :참조되지 않은 지역 변수입니다.
+  MtrxArray.cpp
+  코드를 생성하고 있습니다...
+C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\객체지향형_프로그래밍과_자료구조_실습_4_21912229_김민관\temp\MtrxArray.cpp(39): warning C4715: 'MtrxArray::operator[]': 모든 제어 경로에서 값을 반환하지는 않습니다.
+  temp.vcxproj -> C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\객체지향형_프로그래밍과_자료구조_실습_4_21912229_김민관\x64\Debug\객체지향형_프로그래밍과_자료구조_실습_4_21912229_김민관.exe

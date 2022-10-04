@@ -11,10 +11,10 @@
  ### Contents
  1. Programs that create student structures and store, manage, and use random details  
     Update : 22/09/02  
- 2. Programs that Check how much time is left before Christmas, and create student data
+ 2. Programs that Check how much time is left before Christmas, and create student data  
     Updata : 22/09/12
- 3. Programs that read two-dimensional matrix from the txt file to perform an operation.
+ 3. Programs that read two-dimensional matrix from the txt file to perform an operation.  
     Updata : 22/09/18
- 4. Programs that perform operation for two-dimensional matrix, but it was implemented in operater overloading
+ 4. Programs that perform operation for two-dimensional matrix, but it was implemented in operater overloading  
     Updata : 22/10/04
     

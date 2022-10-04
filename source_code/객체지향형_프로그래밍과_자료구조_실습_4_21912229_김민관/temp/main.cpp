@@ -16,7 +16,6 @@ int main()
 		cout << "Error in opening input data file !!" << endl;
 		exit;
 	}
-	
 	fout.open("Result.txt");
 	if (fout.fail())
 	{

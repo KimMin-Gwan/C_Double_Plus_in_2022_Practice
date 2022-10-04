@@ -117,16 +117,22 @@ Mtrx::~Mtrx() //destructor
 void Mtrx::init(int num_row, int num_col) //intialize
 {
 	n_row = num_row, n_col = num_col;
+	//cout << n_row << "  " << n_col << endl;
 	this->dM = new DBLPTR[this->n_row]; //making row
 	for (int i = 0; i < this->n_row; i++) //making col
 	{
 		this->dM[i] = new double[this->n_col];
 	}
-	for (int j = 0; j < n_row; j++)
+	
+	for (int i = 0; i < n_row; i++)
 	{
-		for (int k = 0; k < n_col; k++)
-			dM[j][k] = 0.0;
+		for (int j = 0; j < n_col; j++) {
+			dM[i][j] = 0;
+			//cout << dM[i][j];
+		}
+		//cout << endl;
 	}
+	//cout << endl;
 }
 const Mtrx Mtrx:: operator+(const Mtrx& mA) //add operation
 {
@@ -156,7 +162,7 @@ const Mtrx Mtrx:: operator*(const Mtrx& mA) //multiplication operation
 		for (int j = 0; j < mA.get_n_col(); j++) {
 			mR.dM[i][j] = 0.0;
 			for (int k = 0; k < n_col; k++)
-				mR.dM[i][j] = dM[i][j] + mA.dM[i][j];
+				mR.dM[i][j] += dM[i][k] * mA.dM[k][j];
 		}
 	}
 
@@ -179,36 +185,59 @@ const Mtrx& Mtrx::operator=(const Mtrx& mA) //substitution operation
 	cout << "n_col : " << mA.get_n_col() << "  n_row" << mA.get_n_row();
 	Mtrx mR("mR_copy", n_row, n_col); //Results to be returned
 	*/
-	init(mA.get_n_row(), mA.get_n_row());
-
+	init(mA.get_n_row(), mA.get_n_col());
 	//retrun as self reference
-	for (int i = 0; i < n_row; i++) {
-		for (int j = 0; j < n_col; j++)
+	for (int i = 0; i < mA.n_row; i++) {
+		for (int j = 0; j < mA.n_col; j++)
 		{
-			cout << this->dM[i][j] << " = " << mA.dM[i][j] << setw(SETW);
+			//cout << this->dM[i][j] << " = " << mA.dM[i][j] << setw(SETW);
 			this->dM[i][j] = mA.dM[i][j]; // copying target matix element
 		}
-		cout << endl;
+		//cout << endl;
 	}
 	return *this;
 }
-
-bool Mtrx:: operator==(const Mtrx& mA) // equivalent operation
+bool Mtrx::operator==(const Mtrx& mM)
 {
-	//n_row = mA.get_n_row(); n_col = mA.get_n_col();
-	for (int i = 0; i < n_row; i++)
-		for (int j = 0; j < n_col; j++)
-			if (dM[i][j] != mA.dM[i][j]) //if each elements are not equal, return false
-				return false;
-	return true; //if for function end, return true
+	int count = 0;	//count the equal type
+
+	if (this->n_row == mM.n_row && this->n_col == mM.n_col)	//if length of n_row and n_col are equal
+	{
+		for (int i = 0; i < n_row; i++)
+		{
+			for (int j = 0; j < n_col; j++)
+			{
+				if (this->dM[i][j] == mM.dM[i][j]) //check each index elements are equal
+					count++; //if both elements are same, count++
+			}
+		}
+		if (count == n_row * n_col) //if count is same with mtrx size, return true
+			return true;
+		else
+			return false;
+	}
+	else
+		return false;
 }
-bool Mtrx:: operator!=(const Mtrx& mA) // unequivalent operation
+bool Mtrx::operator!=(const Mtrx& mM)
 {
-	//n_row = mA.get_n_row(); n_col = mA.get_n_col();
-	for (int i = 0; i < n_row; i++)
-		for (int j = 0; j < n_col; j++)
-			if (dM[i][j] == mA.dM[i][j]) //if each elements are equal, return false
-				return false;
-	return true; // if for function end, return ture
+	int count= 0;
 
+	if (this->n_row != mM.n_row || this->n_col != mM.n_col) //if length of n_row and n_col are not equal return true
+		return true;
+	else
+	{								
+		for (int i = 0; i < n_row; i++)
+		{
+			for (int j = 0; j < n_col; j++)
+			{
+				if (this->dM[i][j] == mM.dM[i][j])//check each index elements are equal
+					count++;
+			}
+		}
+		if (count!= n_row * n_col)//if count is not same with mtrx size, return true
+			return true;
+		else
+			return false;
+	}
 }

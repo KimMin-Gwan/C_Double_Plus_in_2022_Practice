@@ -1,0 +1,65 @@
+Initializing student array (num_students: 10)
+StudentArray (size ; 10)
+ Student[ st_id :  11955, name :  Nqduxwf, Dept :   GGBW, birth date :          (2390- 1-28), GPA : 97.180000
+ Student[ st_id :  29012, name :    Prepg, Dept :   VSRT, birth date :          (2298- 8- 6), GPA : 46.640000
+ Student[ st_id :  35516, name :  Mwcysyy, Dept :   NRVY, birth date :          (2661-10-12), GPA : 23.160000
+ Student[ st_id :  30462, name :    Fmzni, Dept :    VIK, birth date :          (2647- 3-29), GPA : 50.060000
+ Student[ st_id :  45280, name :  Enzkycx, Dept :    SVW, birth date :          (2953- 1-30), GPA : 69.440000
+ Student[ st_id :  19585, name :    Adpoo, Dept :   SGYP, birth date :          (2540-10-23), GPA : 23.060000
+ Student[ st_id :  18635, name :     Vpva, Dept :   BCOE, birth date :          (2269-10-25), GPA : 91.610000
+ Student[ st_id :  12539, name :  Fpbnplj, Dept :    POE, birth date :          (2030- 5- 9), GPA : 34.300000
+ Student[ st_id :  42102, name :   Ehwqnq, Dept :    PYA, birth date :          (2944- 6-20), GPA : 49.460000
+ Student[ st_id :  26572, name :    Oovao, Dept :    XUJ, birth date :          (2654-11-30), GPA : 75.950000
+
+Sorting studentArray by student id : 
+StudentArray (size ; 10)
+ Student[ st_id :  11955, name :  Nqduxwf, Dept :   GGBW, birth date :          (2390- 1-28), GPA : 97.180000
+ Student[ st_id :  12539, name :  Fpbnplj, Dept :    POE, birth date :          (2030- 5- 9), GPA : 34.300000
+ Student[ st_id :  18635, name :     Vpva, Dept :   BCOE, birth date :          (2269-10-25), GPA : 91.610000
+ Student[ st_id :  19585, name :    Adpoo, Dept :   SGYP, birth date :          (2540-10-23), GPA : 23.060000
+ Student[ st_id :  26572, name :    Oovao, Dept :    XUJ, birth date :          (2654-11-30), GPA : 75.950000
+ Student[ st_id :  29012, name :    Prepg, Dept :   VSRT, birth date :          (2298- 8- 6), GPA : 46.640000
+ Student[ st_id :  30462, name :    Fmzni, Dept :    VIK, birth date :          (2647- 3-29), GPA : 50.060000
+ Student[ st_id :  35516, name :  Mwcysyy, Dept :   NRVY, birth date :          (2661-10-12), GPA : 23.160000
+ Student[ st_id :  42102, name :   Ehwqnq, Dept :    PYA, birth date :          (2944- 6-20), GPA : 49.460000
+ Student[ st_id :  45280, name :  Enzkycx, Dept :    SVW, birth date :          (2953- 1-30), GPA : 69.440000
+
+Sorting studentArray by student name : 
+StudentArray (size ; 10)
+ Student[ st_id :  19585, name :    Adpoo, Dept :   SGYP, birth date :          (2540-10-23), GPA : 23.060000
+ Student[ st_id :  42102, name :   Ehwqnq, Dept :    PYA, birth date :          (2944- 6-20), GPA : 49.460000
+ Student[ st_id :  45280, name :  Enzkycx, Dept :    SVW, birth date :          (2953- 1-30), GPA : 69.440000
+ Student[ st_id :  30462, name :    Fmzni, Dept :    VIK, birth date :          (2647- 3-29), GPA : 50.060000
+ Student[ st_id :  12539, name :  Fpbnplj, Dept :    POE, birth date :          (2030- 5- 9), GPA : 34.300000
+ Student[ st_id :  35516, name :  Mwcysyy, Dept :   NRVY, birth date :          (2661-10-12), GPA : 23.160000
+ Student[ st_id :  11955, name :  Nqduxwf, Dept :   GGBW, birth date :          (2390- 1-28), GPA : 97.180000
+ Student[ st_id :  26572, name :    Oovao, Dept :    XUJ, birth date :          (2654-11-30), GPA : 75.950000
+ Student[ st_id :  29012, name :    Prepg, Dept :   VSRT, birth date :          (2298- 8- 6), GPA : 46.640000
+ Student[ st_id :  18635, name :     Vpva, Dept :   BCOE, birth date :          (2269-10-25), GPA : 91.610000
+
+Sorting studentArray by GPA : 
+StudentArray (size ; 10)
+ Student[ st_id :  19585, name :    Adpoo, Dept :   SGYP, birth date :          (2540-10-23), GPA : 23.060000
+ Student[ st_id :  35516, name :  Mwcysyy, Dept :   NRVY, birth date :          (2661-10-12), GPA : 23.160000
+ Student[ st_id :  12539, name :  Fpbnplj, Dept :    POE, birth date :          (2030- 5- 9), GPA : 34.300000
+ Student[ st_id :  29012, name :    Prepg, Dept :   VSRT, birth date :          (2298- 8- 6), GPA : 46.640000
+ Student[ st_id :  42102, name :   Ehwqnq, Dept :    PYA, birth date :          (2944- 6-20), GPA : 49.460000
+ Student[ st_id :  30462, name :    Fmzni, Dept :    VIK, birth date :          (2647- 3-29), GPA : 50.060000
+ Student[ st_id :  45280, name :  Enzkycx, Dept :    SVW, birth date :          (2953- 1-30), GPA : 69.440000
+ Student[ st_id :  26572, name :    Oovao, Dept :    XUJ, birth date :          (2654-11-30), GPA : 75.950000
+ Student[ st_id :  18635, name :     Vpva, Dept :   BCOE, birth date :          (2269-10-25), GPA : 91.610000
+ Student[ st_id :  11955, name :  Nqduxwf, Dept :   GGBW, birth date :          (2390- 1-28), GPA : 97.180000
+
+Sorting studentArray by BirthDate : 
+StudentArray (size ; 10)
+ Student[ st_id :  12539, name :  Fpbnplj, Dept :    POE, birth date :          (2030- 5- 9), GPA : 34.300000
+ Student[ st_id :  18635, name :     Vpva, Dept :   BCOE, birth date :          (2269-10-25), GPA : 91.610000
+ Student[ st_id :  29012, name :    Prepg, Dept :   VSRT, birth date :          (2298- 8- 6), GPA : 46.640000
+ Student[ st_id :  11955, name :  Nqduxwf, Dept :   GGBW, birth date :          (2390- 1-28), GPA : 97.180000
+ Student[ st_id :  19585, name :    Adpoo, Dept :   SGYP, birth date :          (2540-10-23), GPA : 23.060000
+ Student[ st_id :  30462, name :    Fmzni, Dept :    VIK, birth date :          (2647- 3-29), GPA : 50.060000
+ Student[ st_id :  26572, name :    Oovao, Dept :    XUJ, birth date :          (2654-11-30), GPA : 75.950000
+ Student[ st_id :  35516, name :  Mwcysyy, Dept :   NRVY, birth date :          (2661-10-12), GPA : 23.160000
+ Student[ st_id :  42102, name :   Ehwqnq, Dept :    PYA, birth date :          (2944- 6-20), GPA : 49.460000
+ Student[ st_id :  45280, name :  Enzkycx, Dept :    SVW, birth date :          (2953- 1-30), GPA : 69.440000
+

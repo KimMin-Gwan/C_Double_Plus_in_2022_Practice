@@ -1,0 +1,12 @@
+﻿  AngleArc.cpp
+C:\Users\user\Desktop\Practice_6\Practice_6\ConsolePixelDrawing.h(14,1): warning C4005: 'PS_DASHDOT': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\wingdi.h(1970): message : 'PS_DASHDOT'의 이전 정의를 참조하십시오.
+C:\Users\user\Desktop\Practice_6\Practice_6\AngleArc.cpp(55,19): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\Practice_6\Practice_6\AngleArc.cpp(56,19): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\Practice_6\Practice_6\AngleArc.cpp(59,51): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\Practice_6\Practice_6\AngleArc.cpp(59,38): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  main.cpp
+C:\Users\user\Desktop\Practice_6\Practice_6\ConsolePixelDrawing.h(14,1): warning C4005: 'PS_DASHDOT': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\wingdi.h(1970): message : 'PS_DASHDOT'의 이전 정의를 참조하십시오.
+  코드를 생성하고 있습니다...
+  Practice_6.vcxproj -> C:\Users\user\Desktop\Practice_6\x64\Debug\Practice_6.exe

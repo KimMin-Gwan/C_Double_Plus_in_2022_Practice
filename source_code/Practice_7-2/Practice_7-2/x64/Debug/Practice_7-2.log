@@ -1,0 +1,8 @@
+﻿  main.cpp
+C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_7-2\Practice_7-2\main.cpp(2,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_7-2\Practice_7-2\main.cpp(26,11): warning C4101: 'pSt' :참조되지 않은 지역 변수입니다.
+C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_7-2\Practice_7-2\T_Array.h(213,3): warning C4551: 함수 호출에 인수 목록이 없습니다.
+C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_7-2\Practice_7-2\T_Array.h(208): message : 클래스 템플릿 멤버 함수 'void T_Array<Student *,int>::merge_sort(std::string,SortingOrder)'을(를) 컴파일하는 중입니다.
+C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_7-2\Practice_7-2\main.cpp(58): message : 컴파일되는 함수 템플릿 인스턴스화 'void T_Array<Student *,int>::merge_sort(std::string,SortingOrder)'에 대한 참조를 확인하세요.
+C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_7-2\Practice_7-2\main.cpp(27): message : 컴파일되는 클래스 템플릿 인스턴스화 'T_Array<Student *,int>'에 대한 참조를 확인하세요.
+  Practice_7-2.vcxproj -> C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_7-2\x64\Debug\Practice_7-2.exe

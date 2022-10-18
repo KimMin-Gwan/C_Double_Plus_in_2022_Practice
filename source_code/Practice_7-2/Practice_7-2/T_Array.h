@@ -193,13 +193,23 @@ void T_Array<T,K>::_mergeSort (T* array, T* tmp_array, int left, int right, stri
 		tmp_array[right - j + 1] = array[j + mid];
 	
 	for (i = left, j = right, k = left; k <= right; k++) //sorting here
-	{
+	{	
 		tmp_array[i]->getKey(keyName, &key_i); //get i index
 		tmp_array[j]->getKey(keyName, &key_j); //get j index
-		if (key_i < key_j) //compare each data and if right part is bigger, 
-			array[k] = tmp_array[i++];  
-		else //or
-			array[k] = tmp_array[j--]; 
+		if (sortOrder == INCREASING)
+		{
+			if ((K)key_i < (K)key_j) //compare each data and if right part is bigger, 
+				array[k] = tmp_array[i++];
+			else //or
+				array[k] = tmp_array[j--];
+		}
+		else
+		{
+			if ((K)key_i > (K)key_j) //compare each data and if left part is bigger, 
+				array[k] = tmp_array[i++];
+			else //or
+				array[k] = tmp_array[j--];
+		}
 	}
 }
 
@@ -212,7 +222,7 @@ void T_Array<T, K>::merge_sort(string keyName, SortingOrder sortOrder)
 		cout << "Error in creation of tmp_array (size = %d) in mergeSort() !!!" << endl;
 		exit;
 	}
-	_mergeSort(t_array, tmp_array, 0, num_elements - 1, keyName, sortOrder); //sorting algorithm
+	_mergeSort(this->t_array, tmp_array, 0, this->num_elements - 1, keyName, sortOrder); //sorting algorithm
 	delete[] tmp_array;
 }
 

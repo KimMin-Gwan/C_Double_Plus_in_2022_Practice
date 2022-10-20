@@ -230,7 +230,7 @@ template<typename T, typename K>
 void T_Array<T, K>::print(int elements_per_line)
 {
 	int count = 0;
-	while (count < num_elements) //until num_element
+	while (count < this-> num_elements) //until num_element
 	{
 		for (int i = 0; i < elements_per_line; i++)
 		{
@@ -246,10 +246,11 @@ void T_Array<T, K>::print(int elements_per_line)
 template<typename T, typename K>
 bool T_Array<T,K>::isValidIndex(int index)
 {
-	if ((index < 0) || (index >= this->num_elements))
-		return true;
-	else
+	int check_elements = this-> num_elements + 1;
+	if ((index < 0) || (index >= check_elements))
 		return false;
+	else
+		return true;
 }
 
 #endif

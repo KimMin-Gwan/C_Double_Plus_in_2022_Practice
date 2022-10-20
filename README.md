@@ -1,8 +1,8 @@
 # C_Double_Plus_in_2022_Practice
  ### Notice   
- - These solutions are based on Yeungnam University Object-oriented Programming and Data Structure Class Practice  
+ - These solutions are based on Yeungnam University Object-Oriented Programming and Data Structure Course Practice  
  - All content is used to create my portfolio and back up materials.  
- - If you are taking this class and want to use these solutions, please contact me.
+ - If you are taking same Course and want to use these solutions, please contact me.
    
  If there is an error, please contact me by e-mail
  alsrhks2508@naver.com  

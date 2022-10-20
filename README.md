@@ -10,11 +10,33 @@
    
  ### Contents
  1. Programs that create student structures and store, manage, and use random details  
-    Update : 22/09/02  
+    Header : BigRand.h, Student.h  
+    Update : 22/09/02
+        
  2. Programs that Check how much time is left before Christmas, and create student data  
-    Updata : 22/09/12
+    Header : Date.h, Person.h  
+    Updata : 22/09/12  
+      
  3. Programs that read two-dimensional matrix from the txt file to perform an operation.  
-    Updata : 22/09/18
+    Header : Class_Mtrx.h  
+    Updata : 22/09/18  
+      
  4. Programs that perform operation for two-dimensional matrix, but it was implemented in operater overloading  
-    Updata : 22/10/04
-    
+    Header : Mtrx.h, MtrxArray.h  
+    Updata : 22/10/04  
+      
+ 5. Programs that creat student claas as array, studetns details are random, and print in .txt  
+    Header : Date.h, MyString.h, Person.h, Student.h, StudentArray.h  
+    Update : 22/10/07  
+      
+ 6. Programs that draw 8 shapes using ConsoleFixelFrame in Window.h  
+    Header : Shape.h, Color.h, Circle.h, Cylinder.cpp, Rectagnle.cpp, Star.h, PolyGon.h, Triangle.h,  
+             AngleArc.h, ConsolePixelDrawing.h   
+    Update : 22/10/14  
+      
+ 7. Programs that using templates, to making studetn array and sorting them as keyName  
+    Header : Person.h, Student.h, Tarray.h, VectorHandler.h  
+    Update : 22/10/17  
+      
+      
+             

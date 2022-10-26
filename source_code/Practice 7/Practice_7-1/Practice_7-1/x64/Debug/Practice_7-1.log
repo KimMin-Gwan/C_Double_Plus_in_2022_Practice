@@ -1,2 +1,6 @@
-﻿  Student.cpp
-  Practice_7-1.vcxproj -> C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_7-1\x64\Debug\Practice_7-1.exe
+﻿  main.cpp
+C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice 7\Practice_7-1\Practice_7-1\main.cpp(12,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice 7\Practice_7-1\Practice_7-1\main.cpp(23,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  Student.cpp
+  코드를 생성하고 있습니다...
+  Practice_7-1.vcxproj -> C:\Users\user\Desktop\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice 7\Practice_7-1\x64\Debug\Practice_7-1.exe

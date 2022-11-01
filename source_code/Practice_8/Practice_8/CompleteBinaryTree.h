@@ -72,11 +72,9 @@ void CompleteBinaryTree<K,V>::fprintCBT(ofstream& fout)
 }
 
 template<typename K, typename V>
-void CompleteBinaryTree<K,V>::fprintCBT_byLevel(ofstream& fout)
+void CompleteBinaryTree<K,V>::_printCBT_byLevel(ofstream& fout, int index, int level)
 {
 	int index_child;
-	int index = CBT_ROOT;
-	int level = 1;
 	if (this->hasRightChild(index)) //if has right child
 	{
 		index_child = this->rightChildIndex(index);  //get the right child index to print next level
@@ -86,7 +84,7 @@ void CompleteBinaryTree<K,V>::fprintCBT_byLevel(ofstream& fout)
 	for (int i = 0; i < level; i++) //print null
 		fout << "    ";
 	this->t_GA[index].fprint(fout);
-	fout << endl;
+	//fout << endl;
 
 	if (this->hasLeftChild(index)) // if has left child
 	{
@@ -96,16 +94,14 @@ void CompleteBinaryTree<K,V>::fprintCBT_byLevel(ofstream& fout)
 }
 
 template<typename K, typename V>
-void CompleteBinaryTree<K,V>::_printCBT_byLevel(ofstream& fout, int p, int level)
+void CompleteBinaryTree<K,V>::fprintCBT_byLevel(ofstream& fout)
 {
-	if (this->end = 0) //if capacity is ZERO
+	if (this->end <= 0) //if capacity is ZERO
 	{
 		fout << "WORRING : CBT IS EMPTY!!!" << endl;
 		return;
 	}
-	//여기 이상함
 	//fout << setw(3) << t_array[p] << endl;
 	this->_printCBT_byLevel(fout, CBT_ROOT, 0); 
 }
-
 #endif

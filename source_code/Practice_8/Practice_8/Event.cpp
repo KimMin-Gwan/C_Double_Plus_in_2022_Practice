@@ -2,8 +2,9 @@
 
 ostream& operator << (ostream& ostr, const Event& e)
 {
-	ostr << "Event(pri : " << setw(3) << e.event_pri << ", gen:" << setw(3) << e.event_gen_addr;
-	ostr << ", no : " << setw(3) << e.event_no << ")";
+	ostr << "Event(no : " << setw(3) << e.event_no << ", pri : " << setw(3) << e.event_pri;
+	ostr << "gen:" << setw(3) << e.event_gen_addr << ", title:" << setw(3) << e.event_title;
+	ostr << ")";
 	return ostr;
 }
 
@@ -23,8 +24,9 @@ Event::Event(int event_id, int event_pri, string title, int gen_addr)
 
 void Event::printEvent(ostream& ostr)
 {
-	ostr << "Event(pri : " << setw(3) << this->event_pri << ", gen:" << setw(3) << this->event_gen_addr;
-	ostr << ", no : " << setw(3) << this->event_no << ")";
+	ostr << "Event(no : " << setw(3) << this->event_no << ", pri : " << setw(3) << this->event_pri;
+	ostr << "gen:" << setw(3) << this->event_gen_addr << ", title:" << setw(3) << this->event_title;
+	ostr << ")" << endl;;
 }
 
 Event* genRandEvent(int event_no)

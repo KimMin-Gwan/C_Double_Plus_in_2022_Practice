@@ -137,6 +137,9 @@
     <ClInclude Include="TA_Entry.h" />
     <ClInclude Include="T_Entry.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="output.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

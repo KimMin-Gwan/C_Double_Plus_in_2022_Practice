@@ -26,10 +26,16 @@ private:
 
 template<typename K, typename V>
 HeapPrioQueue<K, V>::HeapPrioQueue(int capa, string nm)
-	: CompleteBinaryTree(capa,nm), capacity(capa)
+	: CompleteBinaryTree<K, V>(capa, nm), capacity(capa)
 {
 
 } //constructor 
+
+template<typename K, typename V>
+HeapPrioQueue<K, V>::~HeapPrioQueue()
+{
+	cout << "HeapPrioQueue destructed" << endl;
+}
 
 template<typename K, typename V>
 int HeapPrioQueue<K, V>::insert(T_Entry<K, V>& elem)
@@ -39,7 +45,7 @@ int HeapPrioQueue<K, V>::insert(T_Entry<K, V>& elem)
 	
 	if(isFull())
 	{
-		cout << this->getValue() << "is Full !!" << endl;
+		cout << "ERROR : Queue is Full !!" << endl;
 		return size();
 	}
 	index = this->add_at_end(elem); //inserting and get the end of index
@@ -47,13 +53,13 @@ int HeapPrioQueue<K, V>::insert(T_Entry<K, V>& elem)
 	while(index != CBT_ROOT)
 	{
 		_parentIndex = this->parentIndex(index); // get parent index from CBT
-		if (tArray.getKey() >= tArray .getKey())
+		if (this->t_GA[index].getKey() >= this->t_GA[_parentIndex].getKey())
 			break;
 		else //up-heap bubbling
 		{
-			temp = tArray[index];
-			tArray[index] = tArray[_parentIndex]; 
-			tArray[_parentIndex] = temp; 
+			temp = this->t_GA[index];
+			this->t_GA[index] = this->t_GA[_parentIndex]; 
+			this->t_GA[_parentIndex] = temp; 
 			index = _parentIndex;
 		}
 	}
@@ -72,7 +78,7 @@ T_Entry<K, V>* HeapPrioQueue<K, V>:: removeHeapMin()
 		return NULL;
 	}
 	pMinElem = (T_Entry<K, V>*) new T_Entry<K, V>;
-	*pMinElem = this->getRootElemen();
+	*pMinElem = this->getRootElement();
 	if (HPQ_size == 1)
 	{
 		this->removeCBTEnd();
@@ -80,7 +86,7 @@ T_Entry<K, V>* HeapPrioQueue<K, V>:: removeHeapMin()
 	else
 	{
 		index_p = CBT_ROOT;
-		this->t_GA[CBT_ROOT] = this->t_GA[end];
+		this->t_GA[CBT_ROOT] = this->t_GA[this->end];
 		this->end--;
 		/* down-heap bubbling */
 		while (this->hasLeftChild(index_p))

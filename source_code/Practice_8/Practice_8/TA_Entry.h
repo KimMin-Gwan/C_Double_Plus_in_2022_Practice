@@ -1,6 +1,7 @@
 #ifndef TA_ENTRY_H 
 #define TA_ENTRY_H
 #include <iostream>
+#include <time.h>
 #include "T_Entry.h"
 using namespace std;
 
@@ -61,7 +62,7 @@ template<typename K, typename V>
 TA_Entry<K, V>::~TA_Entry()
 {
 	cout << "T array destuctor was operated" << endl;
-	delete t_GA;
+	//delete t_GA;
 }
 
 template<typename K, typename V>
@@ -148,7 +149,22 @@ T_Entry<K, V> TA_Entry<K, V>::getMax(int begin, int end)
 template<typename K, typename V>
 void TA_Entry<K, V>::shuffle()
 {
-
+	srand(time(0));
+	int index1, index2;
+	int rand_1, rand_2;
+	K temp; //temp K
+	for (int i = 0; i < num_elements; i++)
+	{
+		rand_1 = rand();
+		rand_2 = rand();
+		index1 = ((rand_1 << 15) | rand_2) & num_elements; //index for 24bits
+		rand_1 = rand();
+		rand_2 = rand();
+		index2 = ((rand_1) << 15 | rand_2) & num_elements; //index for 24bits
+		temp = t_GA[index1];
+		t_GA[index1] = t_GA[index2];
+		t_GA[index2] = temp;
+	}
 }
 
 template<typename K, typename V>
@@ -325,13 +341,13 @@ void TA_Entry<K, V>::quick_sort(SortingDirection sd)
 template<typename K, typename V>
 void TA_Entry<K, V>::fprint(ofstream& fout, int elements_per_line)
 {
-
+	//print but no use in this project 
 }
 
 template<typename K, typename V>
 void TA_Entry<K, V>::fprintSample(ofstream& fout, int elements_per_line, int num_sample_lines)
 {
-
+	//print but no use in this project
 }
 
 template<typename K, typename V>

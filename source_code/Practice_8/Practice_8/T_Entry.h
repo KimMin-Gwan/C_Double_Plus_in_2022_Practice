@@ -37,7 +37,15 @@ private:
 template<typename K, typename V>
 void T_Entry<K, V>::fprint(ostream& fout)
 {
-	fout << "[" << this->getKey() << ", " << *(this->getValue()) << "]" << endl;
+	fout << "[Key: " << this->getKey() << ", " << *(this->getValue()) << "]" << endl;
 }
 
+
+template<typename K, typename V>
+T_Entry<K, V>& T_Entry<K, V>::operator=(T_Entry& right)
+{
+	this->_key = right._key;
+	this->_value = right._value;
+	return *this;
+}
 #endif

@@ -35,9 +35,9 @@ private:
 };
 
 template<typename K, typename V>
-void fprint(ostream& fout)
+void T_Entry<K, V>::fprint(ostream& fout)
 {
-	fout << "[" << entry.getKey() << ", " << *(entry.getValue()) << "]" << endl;
+	fout << "[" << this->getKey() << ", " << *(this->getValue()) << "]" << endl;
 }
 
 #endif

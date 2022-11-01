@@ -1,6 +1,7 @@
 #ifndef TA_ENTRY_H 
 #define TA_ENTRY_H
 #include <iostream>
+#include "T_Entry.h"
 using namespace std;
 
 enum SortingDirection { INCREASING, DECREASING };
@@ -15,7 +16,7 @@ public:
 	bool empty() { return num_elements == 0; } //get elements number
 	string getName() { return name; } //get array name
 	//interface ---------------------------------------------------
-	void reserve(int new_capacity); //reserve the capacity
+	void reserve(int newCapacity); //reserve the capacity
 	void insert(int i, T_Entry<K, V> element); //insert data
 	void remove(int i); //remove index
 	T_Entry<K, V>& at(int i); //pointing 
@@ -53,81 +54,110 @@ TA_Entry<K, V>::TA_Entry(int n, string nm)
 { 
 	cout << "T array Entry was constucted" << endl;
 	capacity = n;
-	t_GA = NULL: //init pointer
+	t_GA = new T_Entry<K, V>[capacity]; //init pointer
 }
 
 template<typename K, typename V>
 TA_Entry<K, V>::~TA_Entry()
 {
 	cout << "T array destuctor was operated" << endl;
+	delete t_GA;
 }
 
 template<typename K, typename V>
-void reserve(int new_capacity)
+void TA_Entry<K, V>::reserve(int newCapacity)
 {
-
+	if (this->capacity >= newCapacity) //if don't needto reserve
+		return;
+	V* t_newGA = (V*) new V[newCapacity]; // allocate new memory
+	if (t_newGA == NULL) //error print in console
+	{
+		cout << "ERROR : No More Memory" << endl;
+		exit(0);
+	}
+	cout << this->name << "expands capacity to " << setw(3) << newCapacity << endl;
+	for (int i = 0; i < this->num_elements; i++)
+		t_newGA[i] = this->t_GA[i];
+	delete[] this->t_GA; //free origin memory
+	this->t_GA = t_newGA; //give new array
+	this->capacity = newCapacity; //end of reserve
 }
 
 template<typename K, typename V>
-void insert(int i, T_Entry<K, V> element)
+void TA_Entry<K, V>::insert(int i, T_Entry<K, V> element)
 {
 	if (this->num_elements >= this->capacity) //check the capcity is full
 	{
 		cout << "ERROR : NO MORE MEMORY" << endl;
 		exit(0);
 	}
-	if (isValidIndex(i))
+	if (this->isValidIndex(i))
 	{
-		for (int j = num_elements - 1; j >= i; j--)
-			t_GA[j + 1] = t_GA[j]; //shift up the position
-		t_GA[i] = element;
+		for (int j = this->num_elements - 1; j >= i; j--)
+			this->t_GA[j + 1] = this->t_GA[j]; //shift up the position
+		this->t_GA[i] = element;
 		this->num_elements++; //addition
 	}
 }
 
 template<typename K, typename V>
-void remove(int i)
+void TA_Entry<K, V>::remove(int i)
+{
+	delete this->t_GA[i];
+}
+
+template<typename K, typename V>
+T_Entry<K, V>& TA_Entry<K, V>:: at(int i)
+{
+	return this->t_GA[i];
+}
+
+template<typename K, typename V>
+void TA_Entry<K, V>::set(int i, T_Entry<K, V>& element)
+{
+	
+}
+
+template<typename K, typename V>
+T_Entry<K, V> TA_Entry<K, V>::getMin(int begin, int end)
+{
+	int minIndex = begin;
+
+	for (int i = begin + 1; i < end; i++) //searching min data
+	{
+		if (this->t_GA[i] < this->t_GA[minIndex])
+			minIndex = i; //change minIndex
+	}
+	return this->t_GA[minIndex]; 
+}
+
+template<typename K, typename V>
+T_Entry<K, V> TA_Entry<K, V>::getMax(int begin, int end)
+{
+	int maxIndex = begin;
+
+	for (int i = begin + 1; i < end; i++) //searching min data
+	{
+		if (this->t_GA[i] > this->t_GA[maxIndex])
+			maxIndex= i; //change minIndex
+	}
+	return this->t_GA[maxIndex];
+
+}
+
+template<typename K, typename V>
+void TA_Entry<K, V>::shuffle()
 {
 
 }
 
 template<typename K, typename V>
-T_Entry<K, V>& at(int i)
-{
-
-}
-
-template<typename K, typename V>
-void set(int i, T_Entry<K, V>& element)
-{
-
-}
-
-template<typename K, typename V>
-T_Entry<K, V> getMin(int begin, int end)
-{
-
-}
-
-template<typename K, typename V>
-T_Entry<K, V> getMax(int begin, int end)
-{
-
-}
-
-template<typename K, typename V>
-void shuffle()
-{
-
-}
-
-template<typename K, typename V>
-int sequential_search(T_Entry<K, V> search_key)
+int TA_Entry<K, V>::sequential_search(T_Entry<K, V> search_key)
 {
 	int index = 0; //searching index 
-	for (int index = 0; index < num_elements; index++) //for element size
+	for (int index = 0; index < this->num_elements; index++) //for element size
 	{
-		if (t_GA[index] == search_key) //each index matching with key
+		if (this->t_GA[index] == search_key) //each index matching with key
 			return index; //if find, return index
 	}
 	return -1; //or return -1
@@ -135,21 +165,21 @@ int sequential_search(T_Entry<K, V> search_key)
 }
 
 template<typename K, typename V>
-int binary_search(T_Entry<K, V> search_key)
+int TA_Entry<K, V>::binary_search(T_Entry<K, V> search_key)
 {
 	int low, mid, high; //index
 	int loop = 1; // for count
 	low = 0; //zero size
-	high = num_elements - 1;
+	high = this->num_elements - 1;
 	while (low <= high) //loof at low is equal as high
 	{
 		cout << setw(2) << loop << "-th loop: current search range [" << setw(3)
 			<< low << ", " << setw(3) << high << "]" << endl;
 
 		mid = (low + high) / 2;
-		if (t_GA[mid] == search_key) //searching in middle of the size
+		if (this->t_GA[mid] == search_key) //searching in middle of the size
 			return mid; //if middle index is key, return here
-		else if (t_GA[mid] > search_key) //if middle data is higher than key
+		else if (this->t_GA[mid] > search_key) //if middle data is higher than key
 			high = mid - 1; //high be one less than the middle index
 		else //or middle data is lower than key
 			low = mid + 1;   //low be one more than the middle index
@@ -159,7 +189,7 @@ int binary_search(T_Entry<K, V> search_key)
 }
 
 template<typename K, typename V>
-void selection_sort(SortingDirection sd)
+void TA_Entry<K, V>::selection_sort(SortingDirection sd)
 {
 	int maxIndex, minIndex;
 	V temp;
@@ -172,11 +202,13 @@ void selection_sort(SortingDirection sd)
 		if (sd == INCREASING)
 		{
 			minIndex = i; //setting
-			this->t_GA[i]->getKye(keyName, &key); //get init key
+			//this->t_GA[i]->getKey(keyName, &key); //get init key
+			this->t_GA[i]->getKey(); //get init key
 			compareKey = (K)key; //setting min index
-			for (int j = i + 1; j < this < num_elements)
+			for (int j = i + 1; j < this->num_elements; j++)
 			{
-				this->t_GA[j]->getKey(keyName, &key); //get each index data
+				//this->t_GA[j]->getKey(keyName, &key); //get each index data
+				this->t_GA[j]->getKey(); //get each index data
 				if (key < compareKey)
 				{
 					minIndex = j; //new min index
@@ -193,11 +225,13 @@ void selection_sort(SortingDirection sd)
 		else
 		{
 			maxIndex = i; //setting
-			this->t_GA[i]->getKye(keyName, &key); //get init key
+			//this->t_GA[i]->getKye(keyName, &key); //get init key
+			this->t_GA[i]->getKye(); //get init key
 			compareKey = (K)key; //setting max index
-			for (int j = i + 1; j < this < num_elements)
+			for (int j = i + 1; j < this->num_elements; j++)
 			{
-				this->t_GA[j]->getKey(keyName, &key); //get each index data
+				//this->t_GA[j]->getKey(keyName, &key); //get each index data
+				this->t_GA[j]->getKey(); //get each index data
 				if (key > compareKey)
 				{
 					maxIndex = j; //new max index
@@ -228,7 +262,7 @@ void _partition(V* array, int size, int left, int right, int pivotIndex, Sorting
 
 	for (int i = left; i <= (right - 1); i++)
 	{
-		if (sortOrder == INCREASING)
+		if (sd == INCREASING)
 		{
 			if (array[i] <= pivotValue)
 			{
@@ -282,28 +316,28 @@ void _quick_sort(K* array, int size, int left, int right, SortingDirection sd)
 }
 
 template<typename K, typename V>
-void quick_sort(SortingDirection sd)
+void TA_Entry<K, V>::quick_sort(SortingDirection sd)
 {
-	_quick_sort(this->t_GA, this->num_elements, 0, num_elements - 1, sd) //start of sorting
+	_quick_sort(this->t_GA, this->num_elements, 0, this->num_elements - 1, sd); //start of sorting
 }
 
 
 template<typename K, typename V>
-void fprint(ofstream& fout, int elements_per_line)
-{
-
-}
-
-template<typename K, typename V>
-void fprintSample(ofstream& fout, int elements_per_line, int num_sample_lines)
+void TA_Entry<K, V>::fprint(ofstream& fout, int elements_per_line)
 {
 
 }
 
 template<typename K, typename V>
-bool isValidIndex(int i)
+void TA_Entry<K, V>::fprintSample(ofstream& fout, int elements_per_line, int num_sample_lines)
 {
-	if (i < 0 || index >= this->capacity)
+
+}
+
+template<typename K, typename V>
+bool TA_Entry<K, V>::isValidIndex(int i)
+{
+	if (i < 0 || this->index >= this->capacity)
 		return false;
 	else
 		return true;

@@ -4,6 +4,7 @@ ostream& operator << (ostream& ostr, const Event& e)
 {
 	ostr << "Event(pri : " << setw(3) << e.event_pri << ", gen:" << setw(3) << e.event_gen_addr;
 	ostr << ", no : " << setw(3) << e.event_no << ")";
+	return ostr;
 }
 
 Event::Event()

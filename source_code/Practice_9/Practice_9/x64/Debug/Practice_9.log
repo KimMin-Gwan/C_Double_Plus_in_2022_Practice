@@ -1,6 +1,4 @@
-﻿  Event.cpp
-D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\Event.h(9,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
-  Thread_EventGenerator.cpp
+﻿  Thread_EventGenerator.cpp
 D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\TA_Entry.h(4,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
 D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\Event.h(9,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
 D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\Event.h(13,1): warning C4005: 'NUM_EVENT_GENERATORS': 매크로 재정의

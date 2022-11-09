@@ -303,11 +303,11 @@ void _partition(V* array, int size, int left, int right, int pivotIndex, Sorting
 				newPI = newPI + 1;
 			}
 		}
-		temp = array[newPI];
-		array[newPI] = array[right];
-		array[right] = temp;
-		return newPI;
 	}
+	pivotValue = array[newPI];
+	array[newPI] = array[right];
+	array[right] = pivotValue;
+	return newPI;
 }
 
 template<typename K, typename V>

@@ -10,7 +10,7 @@
 using namespace std;
 
 #define MAX_EVENT_PRIORITY 100
-#define NUM_EVENT_GENERATORS 10
+#define NUM_EVENT_GENERATORS 1
 enum EventStatus {GENERATED, ENQUEUED, PROCESSED, UNDEFINED};
 
 class Event

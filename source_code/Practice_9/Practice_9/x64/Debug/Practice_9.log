@@ -1,25 +1,20 @@
 ﻿  Thread_EventGenerator.cpp
 D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\TA_Entry.h(4,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
 D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\Event.h(9,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
-D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\Event.h(13,1): warning C4005: 'NUM_EVENT_GENERATORS': 매크로 재정의
-D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\SimParam.h(4): message : 'NUM_EVENT_GENERATORS'의 이전 정의를 참조하십시오.
 D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\Thread_EventGenerator.cpp(20,23): warning C4101: 'pEntry' :참조되지 않은 지역 변수입니다.
 D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\Thread_EventGenerator.cpp(21,17): warning C4101: 'pEvent' :참조되지 않은 지역 변수입니다.
 D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\Thread_EventGenerator.cpp(25,6): warning C4101: 'event_handler_addr' :참조되지 않은 지역 변수입니다.
   Thread_EventHandler.cpp
 D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\TA_Entry.h(4,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
 D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\Event.h(9,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
-D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\Event.h(13,1): warning C4005: 'NUM_EVENT_GENERATORS': 매크로 재정의
-D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\SimParam.h(4): message : 'NUM_EVENT_GENERATORS'의 이전 정의를 참조하십시오.
   main.cpp
+D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\main.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
 D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\TA_Entry.h(4,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
 D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\Event.h(9,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
-D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\Event.h(13,1): warning C4005: 'NUM_EVENT_GENERATORS': 매크로 재정의
-D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\SimParam.h(4): message : 'NUM_EVENT_GENERATORS'의 이전 정의를 참조하십시오.
-D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\main.cpp(16,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\main.cpp(22,3): warning C4551: 함수 호출에 인수 목록이 없습니다.
-D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\main.cpp(37,12): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\main.cpp(25,9): warning C4101: 'elapsed_time' :참조되지 않은 지역 변수입니다.
-D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\main.cpp(27,18): warning C4101: 'pEvProc' :참조되지 않은 지역 변수입니다.
+D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\main.cpp(29,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\main.cpp(35,3): warning C4551: 함수 호출에 인수 목록이 없습니다.
+D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\main.cpp(50,12): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\main.cpp(38,9): warning C4101: 'elapsed_time' :참조되지 않은 지역 변수입니다.
+D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\Practice_9\main.cpp(40,18): warning C4101: 'pEvProc' :참조되지 않은 지역 변수입니다.
   코드를 생성하고 있습니다...
   Practice_9.vcxproj -> D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_9\x64\Debug\Practice_9.exe

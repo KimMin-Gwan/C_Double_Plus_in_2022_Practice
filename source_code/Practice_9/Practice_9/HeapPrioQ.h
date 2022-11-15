@@ -15,7 +15,8 @@ public:
 	bool isFull() { return size() == capacity; } //check this Que is Full
 	int size() { return this->end; } //get size
 	//interface----------------------------------------------------------
-	int insert(T_Entry<K, V>& elem); //insert data with mutex cs_priQ
+	T_Entry<K, V>* insert(T_Entry<K, V>& elem);//insert data with mutex cs_priQ
+	//T_Entry<K, V>* insert(T_Entry<K, V>& elem); 
 	T_Entry<K, V>* removeHeapMin(); //remove heap with mutex cs_priQ
 	T_Entry<K, V>* getHeapMin(); //get heap min
 	//function-----------------------------------------------------------
@@ -41,15 +42,16 @@ HeapPrioQueue<K, V>::~HeapPrioQueue()
 }
 
 template<typename K, typename V>
-int HeapPrioQueue<K, V>::insert(T_Entry<K, V>& elem)
+T_Entry<K, V>* HeapPrioQueue<K, V>::insert(T_Entry<K, V>& elem)
 {
 	int index, _parentIndex;
 	T_Entry<K, V> temp;
-	
+	cs_priQ.lock();
 	if(isFull())
 	{
 		cout << "ERROR : Queue is Full !!" << endl;
-		return size();
+		cs_priQ.unlock();
+		return NULL;
 	}
 	index = this->add_at_end(elem); //inserting and get the end of index
 
@@ -66,7 +68,9 @@ int HeapPrioQueue<K, V>::insert(T_Entry<K, V>& elem)
 			index = _parentIndex;
 		}
 	}
-	return size();
+	cs_priQ.unlock();
+	T_Entry<K, V>* pRoot = &(this->t_GA[CBT_ROOT]);
+	return pRoot;
 }
 
 template<typename K, typename V>

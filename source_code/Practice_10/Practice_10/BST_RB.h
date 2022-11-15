@@ -60,9 +60,9 @@ private:
 template<typename K, typename V>
 void T_BST<K, V>::clear()
 {
-	this->_root = NULL;
-	this->num_entry = 0;
-	this->name = "default";
+	this->_root = NULL; //point null
+	this->num_entry = 0; //init zero
+	this->name = "default"; //init name
 }
 
 template<typename K, typename V>
@@ -163,13 +163,13 @@ void T_BST<K, V>::traversal_inOrder(T_BSTN<K, V>* pos, T_Array<V>& array_value)
 	V value;
 	if (pos == NULL)
 		return;
-	pLc = pos->getpLc();
-	pRc = pos->getpRc();
-	traversal_inOrder(pLc, array_value);
+	pLc = pos->getpLc(); //get left child
+	pRc = pos->getpRc(); //get right child
+	traversal_inOrder(pLc, array_value); //recursive with left child
 	entry = pos->getEntry();
-	value = entry.getValue();
-	array_value.insertBack(value);
-	traversal_inOrder(pRc, array_value);
+	value = entry.getValue(); //get value
+	array_value.insertBack(value); //insert the value in array
+	traversal_inOrder(pRc, array_value); //recursive with right child
 }
 
 template<typename K, typename V>
@@ -180,11 +180,13 @@ void T_BST<K, V>::traversal_preOrder(T_BSTN<K, V>* pos, T_Array<V>& array_value)
 	V value;
 	if (pos == NULL)
 		return;
-	T_BSTN<K, V>* pLc, * pRc;
-	T_Entry<K, V> entry;
-	V value;
-	if (pos == NULL)
-		return;
+	pLc = pos->getpLc(); //get left child
+	pRc = pos->getpRc(); //get right child
+	entry = pos->getEntry();
+	value = entry.getValue(); //get value
+	array_value.insertBack(value); //insert value to array
+	traversal_preOrder(pLc, array_value); //recursive with left child
+	traversal_preOrder(pRc, array_value); //recursive with right child
 }
 
 template<typename K, typename V>
@@ -195,13 +197,13 @@ void T_BST<K, V>::traversal_postOrder(T_BSTN<K, V>* pos, T_Array<V>& array_value
 	V value;
 	if (pos == NULL)
 		return;
-	pLc = pos->getpLc();
-	pRc = pos->getpRc();
-	traversal_postOrder(pLc, array_value);
-	traversal_postOrder(pRc, array_value);
+	pLc = pos->getpLc(); //get left child
+	pRc = pos->getpRc(); //get right child
+	traversal_postOrder(pLc, array_value); //recursive with left child
+	traversal_postOrder(pRc, array_value); //recursive with right child
 	entry = pos->getEntry();
-	value = entry.getValue();
-	array_value.insertBack(value);
+	value = entry.getValue(); //get value
+	array_value.insertBack(value); //insert value to array
 }
 
 template<typename K, typename V>
@@ -232,7 +234,7 @@ template<typename K, typename V>
 void T_BST<K, V>::fprint_with_Depth(ostream& fout)
 {
 	T_BSTN<K, V>* root = getRoot();
-	if (this->num_entry == 0)
+	if (this->num_entry == 0) //check empty
 	{
 		fout << getName() << " is empty now !!" << endl;
 		return;
@@ -244,7 +246,7 @@ template<typename K, typename V>
 void T_BST<K, V>::fprint_inOrder(ostream& fout)
 {
 	T_BSTN<K, V>* root = getRoot();
-	if (this->num_entry == 0)
+	if (this->num_entry == 0) //check empty
 	{
 		fout << getName() << " is empty now !!" << endl;
 		return;
@@ -252,12 +254,14 @@ void T_BST<K, V>::fprint_inOrder(ostream& fout)
 	_fprint_inOrder(root, fout);
 }
 
+//protected functions--------------------------------------------------
+
+
 template<typename K, typename V>
 T_BSTN<K, V>* T_BST<K, V>::_maxBSTN(T_BSTN<K, V>* subRoot)
 {
 	T_BSTN<K, V>* pos;
-	if ((subRoot == NULL) ||
-		(NULL == subRoot->getpRc()))
+	if ((subRoot == NULL) || (NULL == subRoot->getpRc()))
 		return subRoot;
 	pos = subRoot;
 	while ((pos->getpRc()) != NULL)
@@ -269,8 +273,7 @@ template<typename K, typename V>
 T_BSTN<K, V>* T_BST<K, V>::_minBSTN(T_BSTN<K, V>* subRoot)
 {
 	T_BSTN<K, V>* pos;
-	if ((subRoot == NULL) ||
-		(NULL == subRoot->getpLc()))
+	if ((subRoot == NULL) || (NULL == subRoot->getpLc()))
 		return subRoot;
 	pos = subRoot;
 	while ((pos->getpLc()) != NULL)
@@ -293,20 +296,21 @@ T_BSTN<K, V>* T_BST<K, V>::_insertInOrder(T_BSTN<K, V>** pp, T_BSTN<K, V>* paren
 
 	pos = *pp;
 	if (pos == NULL) {
-		pos = new T_BSTN<K, V>(this->num_entry);
+		pos = new T_BSTN<K, V>(this->num_entry); //make nodes
 		if (parenPos == NULL)
 		{
-			_root = pos; // initialize the root node }
+			this->_root = pos; // initialize the root node
 			pos->setpPr(parenPos);
-			*pp = pos;
+			*pp = pos; //position root 
 			this->num_entry++; // increment the number of elements
 			return pos;
 		}
+
 		ent = pos->getEntry();
 		if (this->num_entry < ent)
 		{
 			pChildPos = pos->getppLc();
-			newPos = _insertInOrder(pChildPos, pos, e);
+			newPos = _insertInOrder(pChildPos, pos, e); //inserting in order
 			if (newPos != NULL)
 				pos->setpLc(newPos);
 			return NULL; // only the leaf child is set correctly, while the intermediate node is skipped
@@ -314,7 +318,7 @@ T_BSTN<K, V>* T_BST<K, V>::_insertInOrder(T_BSTN<K, V>** pp, T_BSTN<K, V>* paren
 		else if (this->num_entry >= ent)
 		{
 			pChildPos = pos->getppRc();
-			newPos = _insertInOrder(pChildPos, pos, e);
+			newPos = _insertInOrder(pChildPos, pos, e); //inserting in order
 			if (newPos != NULL)
 				pos->setpRc(newPos);
 			return NULL; // only the leaf child is set correctly, while the intermediate node is skipped
@@ -507,9 +511,9 @@ T_BSTN<K, V>* T_BST<K, V>::_reBalance(T_BSTN<K, V>** ppTN)
 {
 	int heightDiff = 0;
 	heightDiff = _getHeightDiff(*ppTN);
-	if (heightDiff > 1) // left subtree is higher
+	if (heightDiff > 1) // left subtree is higher 
 	{
-		if (_getHeightDiff((*ppTN)->getpLc()) > 0)
+		if (_getHeightDiff((*ppTN)->getpLc()) > 0) 
 			*ppTN = _rotate_LL(*ppTN);
 		else
 			*ppTN = _rotate_LR(*ppTN);
@@ -529,17 +533,18 @@ T_BSTN<K, V>* T_BST<K, V>::_searchBSTN(T_BSTN<K, V>* pos, K k)
 {
 	K ent_k;
 	T_BSTN<K, V>* pos_result = NULL;
-	if (pos == NULL)
+
+	if (pos == NULL) //if position pointed NULL
 		return NULL;
 	ent_k = pos->getKey();
-	if (ent_k == k)
+	if (ent_k == k) //check the eqaul key
 		pos_result = pos;
 	// given entry was found here !!
 	else if (ent_k > k)
-		pos_result = _searchBSTN(pos->getpLc(), k);
-	else if (ent_k < k)
-		pos_result = _searchBSTN(pos->getpRc(), k);
-	return pos_result;
+		pos_result = _searchBSTN(pos->getpLc(), k); //recursive with left child
+	else if (ent_k < k) 
+		pos_result = _searchBSTN(pos->getpRc(), k); //recursive with right child
+	return pos_result; //escape recursive and return now position result
 }
 
 template<typename K, typename V>
@@ -548,14 +553,14 @@ void T_BST<K, V>::_fprint_with_Depth(T_BSTN<K, V>* pTN, ostream& fout, int depth
 	T_BSTN<K, V>* pRc, * pLc;
 
 	if ((pRc = pTN->getpRc()) != NULL)
-		_fprint_with_Depth(pRc, fout, depth + 1);
+		_fprint_with_Depth(pRc, fout, depth + 1); //recursive with right child
 	for (int i = 0; i < depth; i++) 
 	{
-		fout << "    ";
+		fout << "    "; //margin
 	}
 	fout << pTN->getEntry() << endl;
 	if ((pLc = pTN->getpLc()) != NULL)
-		_fprint_with_Depth(pLc, fout, depth + 1);
+		_fprint_with_Depth(pLc, fout, depth + 1); //recursive with left child
 }
 
 template<typename K, typename V>

@@ -37,6 +37,17 @@
  7. Programs that using templates, to making studetn array and sorting them as keyName  
     Header : Person.h, Student.h, Tarray.h, VectorHandler.h  
     Update : 22/10/17  
+          
+ 8. Completebinarytree and heapPriorityQueue data struct with Event  
+    Header : Event.h, CompleteBinaryTree.h, HeapPrioQ.h, TA_Entry.h, T_Entry.h   
+    Update : 22/11/03  
       
+ 9. Completebinarytree and heapPriorityQueue data struct with multi-Thread  
+    Header : Event.h, CompleteBinaryTree.h, HeapPrioQ.h, TA_Entry.h, T_Entry.h, Multi_thread.h, SimParam.h   
+    Update : 22/11/06  
+      
+ 9. Double Linked Binary Search Tree data struct with Book  
+    Header : BSTN.h, BST_RB.h, Book.h, Date.h, T_Array.h, T_Entry.h   
+    Update : 22/11/15  
       
              

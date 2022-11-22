@@ -1,3 +1,17 @@
+/**
+*파일명 : "Practice_11"
+*프로그램의 목적 및 기본 기능: 
+*	  이 프로그램은 HashMap을 구성하여 데이터를 Key 와 value로 구분하고
+*	  Iterator를 활용하여 둘을 연결하는 구조를 테스트 해본다.
+* 
+*프로그램 작성자 : 김민관(2022년 11월 23일)
+*최종 Update : Version 1.0, 2022년 11월 23일(김민관)
+*============================================================================
+*프로그램 수정/보완 이력
+*============================================================================
+*/
+
+
 #include <fstream>
 #include <string>
 #include "HashMap.h"
@@ -32,7 +46,7 @@ void main()
 	for (int i = 0; i < NUM_MY_TOEIC_VOCA; i++)
 	{
 		pVoca = &myToeicVocaList[i];
-		keyWord = myToeicVocaList[i].getKeyWord();
+		keyWord = myToeicVocaList[i].getKeyWord(); //get key word and setting
 		myVocaDict.insert(keyWord, pVoca);
 	}
 	//cout << endl;

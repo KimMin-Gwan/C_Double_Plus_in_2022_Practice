@@ -1,6 +1,8 @@
 #ifndef ENTRY_H
 #define ENTRY_H
 #include <iostream>
+#include <iomanip>
+#include <string>
 
 using namespace std;
 
@@ -13,20 +15,22 @@ class Entry
 		return fout;
 	}
 public:
-	Entry(K key, V value) { _key = key; _value = value; }
+	Entry(const K& k, const V& v) : _key(k), _value(v) {}; //constructor
 	Entry() { } // default constructor
-	~Entry() {}
-	void setKey(const K& key) { _key = key; }
-	void setValue(const V& value) { _value = value; }
-	K getKey() const { return _key; }
-	V getValue() const { return _value; }
-	bool operator>(const Entry<K, V>& right) const { return (_key > right.getKey()); }
-	bool operator>=(const Entry<K, V>& right) const { return (_key >= right.getKey()); }
-	bool operator<(const Entry<K, V>& right) const { return (_key < right.getKey()); }
-	bool operator<=(const Entry<K, V>& right) const { return (_key <= right.getKey()); }
-	bool operator==(const Entry<K, V>& right) const { return ((_key == right.getKey()) && (_value == right.getValue())); }
-	Entry<K, V>& operator=(Entry<K, V>& right);
-	void fprint(ostream fout);
+	~Entry() {} //destructor
+	//utils---------------------------------------------------------
+	void setKey(const K& key) { _key = key; } //set key
+	void setValue(const V& value) { _value = value; } //set value
+	K getKey() const { return _key; } //get key
+	V getValue() const { return _value; } //get value
+	//operator overloading------------------------------------------------
+	bool operator>(const Entry<K, V>& right) const { return (_key > right.getKey()); } //compare operator overloading
+	bool operator>=(const Entry<K, V>& right) const { return (_key >= right.getKey()); } //compare operator overloading
+	bool operator<(const Entry<K, V>& right) const { return (_key < right.getKey()); } //compare operator overloading
+	bool operator<=(const Entry<K, V>& right) const { return (_key <= right.getKey()); }//compare operator overloading
+	bool operator==(const Entry<K, V>& right) const { return ((_key == right.getKey()) && (_value == right.getValue())); }//compare operator overloading
+	Entry<K, V>& operator=(Entry<K, V>& right); //assign operator overloading
+	void fprint(ostream fout); //print in file
 private:
 	K _key;
 	V _value;

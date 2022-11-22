@@ -36,11 +36,22 @@ public:
 	{ }
 	MyVoca() {} // default constructor
 	string getKeyWord() { return keyWord; }
+	//MyVoca& operator=(MyVoca& right);
 private:
 	string keyWord; // entry word (also key)
 	Word_Type type;
 	List_Str thesaurus; // thesarus of the entry word in the type
 	List_Str usages;
 };
+/*
+MyVoca& MyVoca:: operator=(MyVoca& right)
+{
+	this->keyWord = right.keyWord;
+	this->type = right.type;
+	this->thesaurus = right.thesaurus;
+	this->usages = right.usages;
+	return *this;
+}
+*/
 
 #endif

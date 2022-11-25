@@ -1,5 +1,27 @@
 ﻿  main.cpp
 D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_11\Practice_11\CyclicShiftHashCode.h(15,1): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_11\Practice_11\main.cpp(12,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_11\Practice_11\main.cpp(28,3): warning C4551: 함수 호출에 인수 목록이 없습니다.
+D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_11\Practice_11\main.cpp(26,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_11\Practice_11\main.cpp(42,3): warning C4551: 함수 호출에 인수 목록이 없습니다.
+D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_11\Practice_11\HashMap.h(192,1): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_11\Practice_11\HashMap.h(187): message : 클래스 템플릿 멤버 함수 'void HashMap<K,V>::fprintBucketSizes(std::ostream &)'을(를) 컴파일하는 중입니다.
+          with
+          [
+              K=std::string,
+              V=MyVoca *
+          ]
+D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_11\Practice_11\main.cpp(60): message : 컴파일되는 함수 템플릿 인스턴스화 'void HashMap<K,V>::fprintBucketSizes(std::ostream &)'에 대한 참조를 확인하세요.
+          with
+          [
+              K=std::string,
+              V=MyVoca *
+          ]
+D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_11\Practice_11\HashDict.h(10): message : 컴파일되는 클래스 템플릿 인스턴스화 'HashMap<K,V>'에 대한 참조를 확인하세요.
+          with
+          [
+              K=std::string,
+              V=MyVoca *
+          ]
+D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_11\Practice_11\main.cpp(34): message : 컴파일되는 클래스 템플릿 인스턴스화 'HashDict<std::string,MyVoca *>'에 대한 참조를 확인하세요.
+D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_11\Practice_11\HashMap.h(194,1): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_11\Practice_11\HashMap.h(197,1): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Practice_11.vcxproj -> D:\용량부족\비주얼 스튜디오\22학년도 프로그래밍 언어 - C++\C_Double_Plus_in_2022_Practice\source_code\Practice_11\x64\Debug\Practice_11.exe

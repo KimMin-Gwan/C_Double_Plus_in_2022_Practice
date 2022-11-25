@@ -39,6 +39,119 @@ foster(adj):
 foster(v): 
  - thesaurus(nurture, raise, promote, advance, )
  - example usage( )
+Bucket[  0] : 0 entries
+Bucket[  1] : 0 entries
+Bucket[  2] : 0 entries
+Bucket[  3] : 0 entries
+Bucket[  4] : 0 entries
+Bucket[  5] : 0 entries
+Bucket[  6] : 0 entries
+Bucket[  7] : 0 entries
+Bucket[  8] : 0 entries
+Bucket[  9] : 0 entries
+Bucket[ 10] : 0 entries
+Bucket[ 11] : 2 entries
+Bucket[ 12] : 0 entries
+Bucket[ 13] : 0 entries
+Bucket[ 14] : 0 entries
+Bucket[ 15] : 0 entries
+Bucket[ 16] : 0 entries
+Bucket[ 17] : 0 entries
+Bucket[ 18] : 0 entries
+Bucket[ 19] : 0 entries
+Bucket[ 20] : 0 entries
+Bucket[ 21] : 0 entries
+Bucket[ 22] : 0 entries
+Bucket[ 23] : 0 entries
+Bucket[ 24] : 0 entries
+Bucket[ 25] : 0 entries
+Bucket[ 26] : 0 entries
+Bucket[ 27] : 0 entries
+Bucket[ 28] : 0 entries
+Bucket[ 29] : 0 entries
+Bucket[ 30] : 0 entries
+Bucket[ 31] : 3 entries
+Bucket[ 32] : 2 entries
+Bucket[ 33] : 0 entries
+Bucket[ 34] : 2 entries
+Bucket[ 35] : 0 entries
+Bucket[ 36] : 0 entries
+Bucket[ 37] : 0 entries
+Bucket[ 38] : 0 entries
+Bucket[ 39] : 0 entries
+Bucket[ 40] : 0 entries
+Bucket[ 41] : 0 entries
+Bucket[ 42] : 0 entries
+Bucket[ 43] : 0 entries
+Bucket[ 44] : 2 entries
+Bucket[ 45] : 0 entries
+Bucket[ 46] : 0 entries
+Bucket[ 47] : 0 entries
+Bucket[ 48] : 0 entries
+Bucket[ 49] : 0 entries
+Bucket[ 50] : 0 entries
+Bucket[ 51] : 0 entries
+Bucket[ 52] : 0 entries
+Bucket[ 53] : 0 entries
+Bucket[ 54] : 0 entries
+Bucket[ 55] : 0 entries
+Bucket[ 56] : 0 entries
+Bucket[ 57] : 0 entries
+Bucket[ 58] : 0 entries
+Bucket[ 59] : 0 entries
+Bucket[ 60] : 0 entries
+Bucket[ 61] : 0 entries
+Bucket[ 62] : 0 entries
+Bucket[ 63] : 0 entries
+Bucket[ 64] : 0 entries
+Bucket[ 65] : 0 entries
+Bucket[ 66] : 0 entries
+Bucket[ 67] : 0 entries
+Bucket[ 68] : 0 entries
+Bucket[ 69] : 0 entries
+Bucket[ 70] : 0 entries
+Bucket[ 71] : 0 entries
+Bucket[ 72] : 0 entries
+Bucket[ 73] : 0 entries
+Bucket[ 74] : 0 entries
+Bucket[ 75] : 0 entries
+Bucket[ 76] : 0 entries
+Bucket[ 77] : 0 entries
+Bucket[ 78] : 0 entries
+Bucket[ 79] : 0 entries
+Bucket[ 80] : 0 entries
+Bucket[ 81] : 0 entries
+Bucket[ 82] : 0 entries
+Bucket[ 83] : 0 entries
+Bucket[ 84] : 0 entries
+Bucket[ 85] : 0 entries
+Bucket[ 86] : 0 entries
+Bucket[ 87] : 0 entries
+Bucket[ 88] : 0 entries
+Bucket[ 89] : 0 entries
+Bucket[ 90] : 0 entries
+Bucket[ 91] : 0 entries
+Bucket[ 92] : 0 entries
+Bucket[ 93] : 2 entries
+Bucket[ 94] : 0 entries
+Bucket[ 95] : 0 entries
+Bucket[ 96] : 0 entries
+Bucket[ 97] : 0 entries
+Bucket[ 98] : 0 entries
+Bucket[ 99] : 0 entries
+Bucket[100] : 0 entries
+
+Max_ent( 3), min_ent( 0), avg (    0)
+Bucket with maximum (3) entries : 
+mean(v): 
+ - thesaurus(require, denote, intend, )
+ - example usage(What do you mean by "perfect" ? )
+mean(adj): 
+ - thesaurus(nasty, poor, middle, miserly, paltry, )
+ - example usage(a man of mean intelligence a mean appearance )
+mean(n): 
+ - thesaurus(average, norm, median, middle, midpoint, (ant) extremity, )
+ - example usage(the mean error the golden mean the arithmetical mean the geometric mean )
 
 Thesaurus of [offer]: 
 offer(v): 

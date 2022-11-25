@@ -57,6 +57,8 @@ void main()
 		pVoca = itr.getValue();
 		fout << *pVoca << endl;
 	}
+	myVocaDict.fprintBucketSizes(fout);
+
 	fout << endl;
 	//string testWord = "mean";
 	string testWord = "offer";

@@ -18,8 +18,8 @@ public:
 	//accessor and mutator--------------------------------
 	void setKey(char k) { key = k; } // key mutator 
 	void setValue(E v) { value = v; } //value mutator
-	void setNext(TrieNode<E>* next) { this->next = nxt; } //next node pointer mutator
-	void setPrev(TrieNode<E>* prev) { this->prev = pv; } //prev node pointer mutator
+	void setNext(TrieNode<E>* next) { this->next = next; } //next node pointer mutator
+	void setPrev(TrieNode<E>* prev) { this->prev = prev; } //prev node pointer mutator
 	void setParent(TrieNode<E>* parent) { this->parent = parent; } //parent node pointer mutator
 	void setChild(TrieNode<E>* child) { this->child = child; } //child node pointer mutator
 	char getKey() { return key; } //key accessor
@@ -41,12 +41,23 @@ private:
 };
 
 template <typename E>
-void _fprint(ostream& fout, TrieNode<E>* pTN, int indent)
+void TrieNode<E>:: _fprint(ostream& fout, TrieNode<E>* pTN, int indent)
 {
-
+	if (pTN == NULL)  //check empty
+	{
+		fout << endl;
+		return;
+	}
+	else 
+	{
+		fout << pTN->key;  //print key
+		_fprint(fout, pTN->child, indent + 1); //fisrt recursive here
+		if (pTN->next == NULL) //if next node did not exist, escape recursive
+			return;
+		for (int i = 0; i < indent; i++) 
+			fout << " "; //indent
+		_fprint(fout, pTN->next, indent); //second recursive here
+	}
 }
-
-
-
 
 #endif

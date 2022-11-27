@@ -88,14 +88,14 @@ void Trie<E>::insert(string keyStr, E value)
 		/**
 		* insert 'ab' to 'abc' trie
 		*  root -- root->next(a)
-		*			   |
-		*			   |
+		*              |
+		*              |
 		*	       pTN->parent(b)
-		*			   |
-		*			   |
+		*              |
+		*              |
 		*            pTN_New('\0')  --  pTN(c)
-		*			   |
-		*			   |
+		*              |
+		*              |
 		*/
 
 
@@ -112,11 +112,11 @@ void Trie<E>::insert(string keyStr, E value)
 		/**
 		* insert 'ant' to 'abcd' trie
 		*  root -- pTN->parent(a)
-		*			   |       ¡¬
-		*			   |	   	 ¡¬
+		*              |       ¡¬
+		*              |         ¡¬
 		*             pTN(b)  --  pTN_New(n)
-		*			   |			 |
-		*			   |			 |
+		*              |             |
+		*              |             |
 		*/
 		pTN_New = new TrieNode<E>(*keyPtr, VALUE_INTERNAL_NODE);
 		pTN_New->setParent(pTN->getParent());

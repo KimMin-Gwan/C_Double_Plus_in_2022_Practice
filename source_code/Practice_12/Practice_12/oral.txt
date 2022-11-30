@@ -1,0 +1,15 @@
+3
+pesudo code
+insert function
+find the postiion 
+1. check the key is exist
+2. loop while the position match the Key
+3. if no more next node, excape the loop
+4. if next node exist, find the same node key with finding key 
+5. 
+
+
+
+4 
+
+5

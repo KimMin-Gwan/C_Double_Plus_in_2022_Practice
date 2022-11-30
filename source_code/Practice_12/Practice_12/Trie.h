@@ -144,11 +144,11 @@ void Trie<E>::insert(string keyStr, E value)
 		/**
 		* insert 'net' between 'quit' trie and 'abcd'
 		*  root -- pTN->Prev(a) -- pTN_New(n) -- pTN(q)
-		*			   |			 |			  |
-		*			   |			 |			  |
-		*			node(b)		   child(e)	    node(u)
-		*			   |			 |			  |
-		*			   |			 |			  |
+		*              |             |            |
+		*              |             |            |
+		*           node(b)       child(e)     node(u)
+		*              |             |            |
+		*              |             |            |
 		*/
 		pTN_New = new TrieNode<E>(*keyPtr, VALUE_INTERNAL_NODE);
 		pTN_New->setNext(pTN); //pTN_New pushes pTN to next node

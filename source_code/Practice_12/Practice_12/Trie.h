@@ -112,8 +112,8 @@ void Trie<E>::insert(string keyStr, E value)
 		/**
 		* insert 'ant' to 'abcd' trie
 		*  root -- pTN->parent(a)
-		*              |       ¡¬
-		*              |         ¡¬
+		*              |       ï¿½ï¿½
+		*              |         ï¿½ï¿½
 		*             pTN(b)  --  pTN_New(n)
 		*              |             |
 		*              |             |
@@ -144,11 +144,11 @@ void Trie<E>::insert(string keyStr, E value)
 		/**
 		* insert 'net' between 'quit' trie and 'abcd'
 		*  root -- pTN->Prev(a) -- pTN_New(n) -- pTN(q)
-		*			   |			 |			  |
-		*			   |			 |			  |
-		*			node(b)		   child(e)	    node(u)
-		*			   |			 |			  |
-		*			   |			 |			  |
+		*              |             |            |
+		*              |             |            |
+		*           node(b)       child(e)     node(u)
+		*              |             |            |
+		*              |             |            |
 		*/
 		pTN_New = new TrieNode<E>(*keyPtr, VALUE_INTERNAL_NODE);
 		pTN_New->setNext(pTN); //pTN_New pushes pTN to next node
@@ -228,7 +228,7 @@ void Trie<E>::deleteKeyStr(string keyStr)
 	TrieNode<E>* tmp = NULL;
 	int trie_val;
 	_root = this->_root;
-	if (NULL == _root || keyStr.empty())
+	if (NULL == _root || keyStr.empty()) //if root is empty
 		return;
 	pTN = _find(keyStr, FULL_MATCH);
 	if (pTN == NULL) {

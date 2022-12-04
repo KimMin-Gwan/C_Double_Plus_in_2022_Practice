@@ -83,7 +83,7 @@ void BreadthFirstSearch::fprintDistMtrx(ostream& fout)
 		{
 			dist = ppDistMtrx[i][j];
 			if (dist == PLUS_INF)
-				fout << " +oo";
+				fout << "  +oo";
 			else
 				fout << setw(5) << dist;
 		}

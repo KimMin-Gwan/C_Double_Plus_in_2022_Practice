@@ -10,37 +10,43 @@ void BreadthFirstSearch::initialize()
 {
 	Vertex* pVrtx = getGraph().getpVrtxArray();
 	VrtxList vrtxLst;
-	graph.vertices(vrtxLst);
-	int num_vertices = graph.getNumVertices();
+
+	this->graph.vertices(vrtxLst); //insert vertex to vertexList
+	int num_vertices = graph.getNumVertices(); 
 	for (int vID = 0; vID < num_vertices; vID++)
-		pVrtx[vID].setVrtxStatus(UN_VISITED);
+		pVrtx[vID].setVrtxStatus(UN_VISITED); //set status unvisited
+
 	EdgeList edges;
-	graph.edges(edges);
+	this->graph.edges(edges); //insert edges
 	for (EdgeItor pe = edges.begin(); pe != edges.end(); ++pe)
-		pe->setEdgeStatus(EDGE_UN_VISITED);
+		pe->setEdgeStatus(EDGE_UN_VISITED); //set status unvisited
 }
 
 void BreadthFirstSearch::initDistMtrx() 
 {
-	double** ppDistMtrx;
-	double* pLeaseCostMtrx;
-	int num_nodes;
+	double** ppDistMtrx; //distance matrix
+	//double* pLeaseCostMtrx;
+	int num_nodes; //size of graph
 	Vertex* pVrtxArray;
 	EdgeList* pAdjLstArray;
 	int curVID, vID;
-	num_nodes = getNumVertices();
-	pVrtxArray = graph.getpVrtxArray();
-	pAdjLstArray = graph.getpAdjLstArray();
+	//get details------------------------
+	num_nodes = getNumVertices(); 
+	pVrtxArray = this->graph.getpVrtxArray();
+	pAdjLstArray = this->graph.getpAdjLstArray();
 	ppDistMtrx = getppDistMtrx();
-	for (int i = 0; i < num_nodes; i++) {
-		curVID = pVrtxArray[i].getID();
-		EdgeItor pe = pAdjLstArray[curVID].begin();
-		while (pe != pAdjLstArray[curVID].end()) {
+
+	for (int i = 0; i < num_nodes; i++) 
+	{
+		curVID = pVrtxArray[i].getID(); //get vertex index
+		EdgeItor pe = pAdjLstArray[curVID].begin(); //iterator set begin
+		while (pe != pAdjLstArray[curVID].end()) 
+		{
 			vID = (*(*pe).getpVrtx_2()).getID();
-			ppDistMtrx[curVID][vID] = (*pe).getDistance();
-			pe++;
+			ppDistMtrx[curVID][vID] = (*pe).getDistance(); //insert dinstance to distance matrix
+			pe++; //next node
 		}
-		ppDistMtrx[curVID][curVID] = 0.0;
+		ppDistMtrx[curVID][curVID] = 0.0;  //what for zero??
 	}
 }
 
@@ -52,25 +58,29 @@ void BreadthFirstSearch::fprintDistMtrx(ostream& fout)
 	double dist;
 	int vID;
 	string vName;
-	pVrtxArray = graph.getpVrtxArray();
+	pVrtxArray = this->graph.getpVrtxArray();
 	num_nodes = getNumVertices();
 	ppDistMtrx = getppDistMtrx();
 	fout << "\nDistance Matrix of Graph (" << graph.getName() << ") :" << endl;
-	fout << " |";
-	for (int i = 0; i < num_nodes; i++) {
+	fout << "       |";
+	for (int i = 0; i < num_nodes; i++)
+	{
 		vName = pVrtxArray[i].getName();
 		fout << setw(5) << vName;
 	}
 	fout << endl;
 	fout << "-------+";
-	for (int i = 0; i < num_nodes; i++) {
+	for (int i = 0; i < num_nodes; i++) 
+	{
 		fout << "-----";
 	}
 	fout << endl;
-	for (int i = 0; i < num_nodes; i++) {
+	for (int i = 0; i < num_nodes; i++) 
+	{
 		vName = pVrtxArray[i].getName();
-		fout << setw(5) << vName << " |";
-		for (int j = 0; j < num_nodes; j++) {
+		fout << setw(5) << vName << "  |";
+		for (int j = 0; j < num_nodes; j++) 
+		{
 			dist = ppDistMtrx[i][j];
 			if (dist == PLUS_INF)
 				fout << " +oo";
@@ -104,6 +114,7 @@ void BreadthFirstSearch::DijkstraShortestPath(ostream& fout, Vertex& start, Vert
 	pLeastCost = new double[num_nodes];
 	pPrev = new int[num_nodes];
 	pBFS_Process_Stat = new BFS_PROCESS_STATUS[num_nodes];
+
 	// initialize L(n) = w(start, n);
 	for (int i = 0; i < num_nodes; i++)
 	{
@@ -119,6 +130,7 @@ void BreadthFirstSearch::DijkstraShortestPath(ostream& fout, Vertex& start, Vert
 	string vName;
 	fout << "Dijkstra::Least Cost from Vertex (" << start.getName() << ") at each round : " << endl;
 	fout << " |";
+
 	for (int i = 0; i < num_nodes; i++)
 	{
 		vName = pVrtxArray[i].getName();
@@ -131,6 +143,7 @@ void BreadthFirstSearch::DijkstraShortestPath(ostream& fout, Vertex& start, Vert
 		fout << setw(5) << "-----";
 	}
 	fout << endl;
+
 	while (num_selected < num_nodes)
 	{
 		round++;

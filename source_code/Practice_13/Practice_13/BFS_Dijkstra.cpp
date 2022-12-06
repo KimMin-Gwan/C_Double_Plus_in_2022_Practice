@@ -111,18 +111,18 @@ void BreadthFirstSearch::DijkstraShortestPath(ostream& fout, Vertex& start, Vert
 	target_vID = target.getID();
 	num_nodes = getNumVertices();
 	ppDistMtrx = getppDistMtrx();
-	pLeastCost = new double[num_nodes];
-	pPrev = new int[num_nodes];
+	pLeastCost = new double[num_nodes]; //set coast 
+	pPrev = new int[num_nodes]; //num nodes
 	pBFS_Process_Stat = new BFS_PROCESS_STATUS[num_nodes];
 
 	// initialize L(n) = w(start, n);
 	for (int i = 0; i < num_nodes; i++)
 	{
-		pLeastCost[i] = ppDistMtrx[start_vID][i];
+		pLeastCost[i] = ppDistMtrx[start_vID][i]; //set least cost pointer to start vertex ID
 		pPrev[i] = start_vID;
-		pBFS_Process_Stat[i] = NOT_SELECTED;
+		pBFS_Process_Stat[i] = NOT_SELECTED; //init not selected
 	}
-	pBFS_Process_Stat[start_vID] = SELECTED;
+	pBFS_Process_Stat[start_vID] = SELECTED;  //start node set selected
 	num_selected = 1;
 	path.clear();
 	int round = 0;
@@ -136,6 +136,7 @@ void BreadthFirstSearch::DijkstraShortestPath(ostream& fout, Vertex& start, Vert
 		vName = pVrtxArray[i].getName();
 		fout << setw(5) << vName;
 	}
+
 	fout << endl;
 	fout << "-----------+";
 	for (int i = 0; i < num_nodes; i++)
@@ -143,6 +144,7 @@ void BreadthFirstSearch::DijkstraShortestPath(ostream& fout, Vertex& start, Vert
 		fout << setw(5) << "-----";
 	}
 	fout << endl;
+	//--------------------------------------------------
 
 	while (num_selected < num_nodes)
 	{
@@ -152,28 +154,46 @@ void BreadthFirstSearch::DijkstraShortestPath(ostream& fout, Vertex& start, Vert
 		minCost = PLUS_INF;
 		for (int i = 0; i < num_nodes; i++) // find a node with LeastCost 
 		{
-			if ((pLeastCost[i] < minCost) && (pBFS_Process_Stat[i] != SELECTED)) {
-				minID = i;
+			if ((pLeastCost[i] < minCost) && (pBFS_Process_Stat[i] != SELECTED)) //sequential search
+			 {
+				minID = i; 
 				minCost = pLeastCost[i];
 			}
 		}
-		if (minID == -1) {
+		
+		if (minID == -1)  //for exception
+		{
 			fout << "Error in Dijkstra() -- found not connected vertex !!" << endl;
 			break;
 		}
-		else {
-			pBFS_Process_Stat[minID] = SELECTED;
-			num_selected++;
-			if (minID == target_vID)
+
+		else // if find least cost vertex id
+		{
+			pBFS_Process_Stat[minID] = SELECTED;  //select least cost vertex
+			num_selected++; //count up
+
+			if (minID == target_vID) // if reach the target
 			{
 				fout << endl << "reached to the target node ("
-					<< pVrtxArray[minID].getName() << ") at Least Cost = " << minCost << endl;
+					<< pVrtxArray[minID].getName() << ") at Least Cost = " << minCost << endl; 
 				vID = minID;
+
+				//이거 왜 do while 문이지? 증감식이 없는데?
+				/*
+				if (vID == start_vID);
+				{
+					vrtx = pVrtxArray[vID];
+					path.push_front(vrtx);
+					vID = pPrev[vID];
+				}
+				*/
+
 				do {
 					vrtx = pVrtxArray[vID];
 					path.push_front(vrtx);
 					vID = pPrev[vID];
-				} while (vID != start_vID);
+				} while (vID != start_vID); 
+
 				vrtx = pVrtxArray[vID];
 				path.push_front(vrtx); // start node
 				break;

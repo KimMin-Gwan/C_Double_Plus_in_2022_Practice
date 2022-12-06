@@ -104,18 +104,44 @@ void BreadthFirstSearch::DijkstraShortestPath(ostream& fout, Vertex& start, Vert
 	Vertex vrtx, * pPrevVrtx, v;
 	Edge e;
 	int start_vID, target_vID, curVID, vID;
-	EdgeList* pAdjLstArray;
-	pVrtxArray = graph.getpVrtxArray();
-	pAdjLstArray = graph.getpAdjLstArray();
-	start_vID = start.getID();
-	target_vID = target.getID();
-	num_nodes = getNumVertices();
-	ppDistMtrx = getppDistMtrx();
-	pLeastCost = new double[num_nodes]; //set coast 
-	pPrev = new int[num_nodes]; //num nodes
-	pBFS_Process_Stat = new BFS_PROCESS_STATUS[num_nodes];
 
-	// initialize L(n) = w(start, n);
+	EdgeList* pAdjLstArray; //근접 edge 포인터
+	pVrtxArray = graph.getpVrtxArray(); //노드 어레이
+	pAdjLstArray = graph.getpAdjLstArray(); //근접 노드 어레이 
+	start_vID = start.getID(); //시작노드 
+	target_vID = target.getID(); //목표 노드
+	num_nodes = getNumVertices(); //총 노드 갯수
+	ppDistMtrx = getppDistMtrx(); // 표로 표현된 주변 노드간의 거리
+	pLeastCost = new double[num_nodes]; // 동적할당
+	pPrev = new int[num_nodes]; //근접 노드?
+	pBFS_Process_Stat = new BFS_PROCESS_STATUS[num_nodes]; //선택했었는지 아닌지 확인하기 위한 파라미터
+
+	//
+	//  A -- 3 -- B --- 5 --- E
+	//  |                     |
+	//  |                     |
+	//  5                     |
+	//  |                     |
+	//  C --4--- D ----- 7 ----
+	//  |        |
+	//  |        |
+	//  |        4
+	//  5        |
+	//  |        |
+	//  -------- F
+	//
+	//    ppDistMtrx[][]
+	//        A   B   C   D   E   F   
+	//        0   1   2   3   4   5
+	//
+	// A 0    0   3   5  oo  oo  oo
+	// B 1    3   0  oo  oo   5  oo
+	// C 2    5  oo   0   4  oo   5 
+	// D 3   oo  oo   4   0   7   4
+	// E 4   oo   5  oo   7   0  oo
+	// F 5   oo  oo   5   4  oo   0
+	//   
+	//
 	for (int i = 0; i < num_nodes; i++)
 	{
 		pLeastCost[i] = ppDistMtrx[start_vID][i]; //set least cost pointer to start vertex ID
@@ -154,8 +180,9 @@ void BreadthFirstSearch::DijkstraShortestPath(ostream& fout, Vertex& start, Vert
 		minCost = PLUS_INF;
 		for (int i = 0; i < num_nodes; i++) // find a node with LeastCost 
 		{
+			//minCost보다 더 작은 값은 찾아야함
 			if ((pLeastCost[i] < minCost) && (pBFS_Process_Stat[i] != SELECTED)) //sequential search
-			 {
+			 {//더 작은 값을 발견하면 인덱스와 최소 값을 갱신
 				minID = i; 
 				minCost = pLeastCost[i];
 			}
@@ -167,28 +194,18 @@ void BreadthFirstSearch::DijkstraShortestPath(ostream& fout, Vertex& start, Vert
 			break;
 		}
 
-		else // if find least cost vertex id
+		else //이번에 선택된 노드를 선택됨으로 변경하고 선택한 노드의 수를 증가
 		{
 			pBFS_Process_Stat[minID] = SELECTED;  //select least cost vertex
 			num_selected++; //count up
-
-			if (minID == target_vID) // if reach the target
+			//근데 만약에 이번에 선택한 노드가 목표노드라면 while문을 탈출해야함 == 탐색이 끝남
+			if (minID == target_vID) 
 			{
 				fout << endl << "reached to the target node ("
 					<< pVrtxArray[minID].getName() << ") at Least Cost = " << minCost << endl; 
 				vID = minID;
 
-				//이거 왜 do while 문이지? 증감식이 없는데?
-				/*
-				if (vID == start_vID);
-				{
-					vrtx = pVrtxArray[vID];
-					path.push_front(vrtx);
-					vID = pPrev[vID];
-				}
-				*/
-
-				do {
+				do { // 경로로 지정해야함
 					vrtx = pVrtxArray[vID];
 					path.push_front(vrtx);
 					vID = pPrev[vID];

@@ -142,18 +142,23 @@ void BreadthFirstSearch::DijkstraShortestPath(ostream& fout, Vertex& start, Vert
 	// F 5   oo  oo   5   4  oo   0
 	//   
 	//
+	cout << "init param" << endl;
 	for (int i = 0; i < num_nodes; i++)
 	{
 		pLeastCost[i] = ppDistMtrx[start_vID][i]; //set least cost pointer to start vertex ID
 		pPrev[i] = start_vID;
 		pBFS_Process_Stat[i] = NOT_SELECTED; //init not selected
+		cout << "pLeastCost[" << i << "] = " << pLeastCost[i] << endl;
+		cout << "pPrev[" << i << "] = " << pPrev[i] << endl;
 	}
+
 	pBFS_Process_Stat[start_vID] = SELECTED;  //start node set selected
 	num_selected = 1;
 	path.clear();
 	int round = 0;
 	int cost;
 	string vName;
+
 	fout << "Dijkstra::Least Cost from Vertex (" << start.getName() << ") at each round : " << endl;
 	fout << " |";
 
@@ -178,13 +183,23 @@ void BreadthFirstSearch::DijkstraShortestPath(ostream& fout, Vertex& start, Vert
 		fout << "round [" << setw(2) << round << "] |";
 		minID = -1;
 		minCost = PLUS_INF;
+		cout << "searching the min ID vertex" << endl;
 		for (int i = 0; i < num_nodes; i++) // find a node with LeastCost 
 		{
 			//minCost보다 더 작은 값은 찾아야함
+			cout << endl  << "i = " << i << endl;
+			cout << "pLeastCost[" << i << "] = " << pLeastCost[i] << endl;
+			cout << "minCost = " << minCost<< endl;
+			cout << "pBFS_Porcess_Stat[" << i << "] =  " << ((pBFS_Process_Stat[i] == SELECTED) ? "SELECTED" : "NOTSELECTED") << endl << endl;
 			if ((pLeastCost[i] < minCost) && (pBFS_Process_Stat[i] != SELECTED)) //sequential search
-			 {//더 작은 값을 발견하면 인덱스와 최소 값을 갱신
+			{
+				//더 작은 값을 발견하면 인덱스와 최소 값을 갱신
 				minID = i; 
 				minCost = pLeastCost[i];
+
+				cout << "We found the Index" << endl;
+				cout << "minID = i (" << minID << " = " << i << ")" << endl;
+				cout << "minCost = pLeastCost[" << i <<"] (" << minCost<< " = " << pLeastCost[i] << ")" << endl;
 			}
 		}
 		
@@ -196,8 +211,10 @@ void BreadthFirstSearch::DijkstraShortestPath(ostream& fout, Vertex& start, Vert
 
 		else //이번에 선택된 노드를 선택됨으로 변경하고 선택한 노드의 수를 증가
 		{
+			cout << minID << " vertex is now selected " << endl;
 			pBFS_Process_Stat[minID] = SELECTED;  //select least cost vertex
 			num_selected++; //count up
+			cout << "num_selected increased (" << num_selected << ")" << endl << endl;
 			//근데 만약에 이번에 선택한 노드가 목표노드라면 while문을 탈출해야함 == 탐색이 끝남
 			if (minID == target_vID) 
 			{
@@ -219,22 +236,153 @@ void BreadthFirstSearch::DijkstraShortestPath(ostream& fout, Vertex& start, Vert
 		/* Edge relaxation */
 		for (int i = 0; i < num_nodes; i++)
 		{
-			if ((pBFS_Process_Stat[i] != SELECTED) &&
-				(pLeastCost[i] > (pLeastCost[minID] + ppDistMtrx[minID][i])))
+
+			cout << endl << "if ((pBFS_Process_Stat[i] != SELECTED) && (pLeastCost[i] >(pLeastCost[minID] + ppDistMtrx[minID][i])))" << endl;
+			cout << "pBFS_Porcess_Stat[" << i << "] =  " << ((pBFS_Process_Stat[i] == SELECTED) ? "SELECTED" : "NOTSELECTED") << endl << endl;
+			cout << "pLeastCost[" << i << "] = " << pLeastCost[i] << endl;
+			cout << "pLeastCost[" << minID << "] (" << pLeastCost[minID] << ") + " <<  "ppDistMtrx[" << minID << "]" << "[" << i << "] (" 
+				 << ppDistMtrx[minID][i] << ") = " <<  (pLeastCost[minID] + ppDistMtrx[minID][i]) << endl; 
+
+			if ((pBFS_Process_Stat[i] != SELECTED) && (pLeastCost[i] > (pLeastCost[minID] + ppDistMtrx[minID][i])))
 			{
+				cout << endl << "we found index" << endl;
 				pPrev[i] = minID;
 				pLeastCost[i] = pLeastCost[minID] + ppDistMtrx[minID][i];
+				cout << "pPrev[" << i << "] = " << minID << endl;
+				cout << "pLeastCost[" << i << "] = " << pLeastCost[minID] + ppDistMtrx[minID][i] << endl << endl;
 			}
 		}
 		// print out the pLeastCost[] for debugging
 		for (int i = 0; i < num_nodes; i++)
 		{
+			cout << endl;
 			cost = pLeastCost[i];
 			if (cost == PLUS_INF)
 				fout << " +oo";
 			else
 				fout << setw(5) << pLeastCost[i];
 		}
-		fout << " ==> selected vertex : " << pVrtxArray[minID] << endl;
+		fout << " ==> selected vertex : " << pVrtxArray[minID] << endl << endl;
+		cout << "end of this loop" << endl;
 	} // end while()
+}
+
+
+void BreadthFirstSearch::findShortestPath(ostream& fout, Vertex& start, Vertex& target, VrtxList& path)
+{
+	initialize();
+	path.clear();
+
+	initDistMtrx(); //fprintDistMtrx(fout);
+	_bfsTraversal(fout, start, target, path);
+}
+
+void BreadthFirstSearch::_bfsTraversal(ostream& fout, Vertex& start, Vertex& target, VrtxList& path)
+{	int* nodeLevel;
+	int num_nodes, num_visited;
+	int* pPrev;
+	int vID;
+	Vertex* pVrtxArray, * pVrtx;
+	Vertex vrtx, v;
+	Edge e;
+	int start_vID, target_vID, cur_vID, vID_1, vID_2;
+	VrtxList vrtxs;
+	VrtxItor vItor;
+	EdgeList edges;
+	EdgeItor eItor;
+	if (start == target)
+	{
+		done = true;
+		path.push_back(start);
+		return;
+	}
+	pVrtxArray = graph.getpVrtxArray();
+	start_vID = start.getID();
+	target_vID = target.getID();
+	num_nodes = getNumVertices();
+	pPrev = new int[num_nodes];
+	nodeLevel = new int[num_nodes];
+	for (int i = 0; i < num_nodes; i++)
+	{
+		nodeLevel[i] = -1;
+		pPrev[i] = -1;
+	}
+	graph.vertices(vrtxs);
+	visit(start);
+	vItor = vrtxs.begin();
+	pPrev[start_vID] = start_vID;
+	num_visited = 0;
+	int level = 0;
+	nodeLevel[start_vID] = 0;
+	while (num_visited < num_nodes)
+	{
+		fout << "Level (" << setw(2) << level << ") :";
+		// find UN_VISITED Vertex
+		vItor = vrtxs.begin();
+		while (vItor != vrtxs.end())
+		{
+			vID = vItor->getID();
+			if (isVisited(*vItor) && (nodeLevel[vID] == level))
+			{
+				fout << *vItor << ", ";
+				graph.incidentEdges(*vItor, edges);
+				eItor = edges.begin();
+				// eItor = edges.begin();
+				while (eItor != edges.end())
+				{
+					pVrtx = eItor->getpVrtx_2();
+					if (pVrtx->getvrtxStatus() != VISITED)
+					{
+						nodeLevel[pVrtx->getID()] = level + 1;
+						pVrtx->setVrtxStatus(VISITED);
+						eItor->setEdgeStatus(DISCOVERY);
+						pPrev[pVrtx->getID()] = vItor->getID();
+					}
+					else
+					{
+						eItor->setEdgeStatus(CROSS);
+					}
+					++eItor;
+				} // end while(eItor != edges.end())
+				num_visited++;
+			} // end if (isVisited() ...)
+			++vItor;
+		} // end while (vItor != vrtxs.end())
+		fout << endl;
+		if (num_visited >= num_nodes)
+			break;
+		level++;
+	} // end while (num_visited < num_nodes)
+	vID = target_vID;
+	while (vID != start_vID)
+	{
+		pVrtx = &pVrtxArray[vID];
+		path.push_front(*pVrtx);
+		vID = pPrev[vID];
+	}
+	path.push_front(pVrtxArray[vID]);
+}
+
+void BreadthFirstSearch::visit(Vertex& v)
+{
+	int numNodes = getGraph().getNumVertices();
+	int vID = v.getID();
+	if (isValidvID(vID))
+	{
+		Vertex* pVrtx = getGraph().getpVrtxArray();
+		pVrtx[vID].setVrtxStatus(VISITED);
+		//pVrtxStatus[vID] = VISITED;
+	}
+}
+
+bool BreadthFirstSearch::isVisited(Vertex& v)
+{
+	int numNodes = getGraph().getNumVertices();
+	int vID = v.getID();
+	if (isValidvID(vID))
+	{
+		Vertex* pVrtx = getGraph().getpVrtxArray();
+		return (pVrtx[vID].getvrtxStatus() == VISITED);
+		//return (pVrtxStatus[vID] == VISITED);
+	}
 }

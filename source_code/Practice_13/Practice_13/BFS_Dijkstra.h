@@ -45,5 +45,10 @@ public:
 	void DijkstraShortestPath(ostream& fout, Vertex& s, Vertex& t, VrtxList& path); //find shortest path
 	Graph& getGraph() { return graph; } //get graph
 	double** getppDistMtrx() { return ppDistMtrx; } //det distence metrix
+	void findShortestPath(ostream& fout, Vertex& start, Vertex& target, VrtxList& path);
+	void _bfsTraversal(ostream& fout, Vertex& start, Vertex& target, VrtxList& path);
+	void visit(Vertex& v);
+	bool isVisited(Vertex& v);
+
 };
 #endif

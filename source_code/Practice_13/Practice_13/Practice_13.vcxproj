@@ -128,13 +128,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BFS_Dijkstra.h" />
+    <ClInclude Include="DepthFirstSearch.h" />
     <ClInclude Include="Graph.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BFS_Dijkstra.cpp" />
+    <ClCompile Include="DepthFirstSearch.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="AtoF.txt" />
     <Text Include="USA_7_cities.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

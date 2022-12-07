@@ -21,6 +21,9 @@
     <ClInclude Include="Graph.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="DepthFirstSearch.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BFS_Dijkstra.cpp">
@@ -29,9 +32,15 @@
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="DepthFirstSearch.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="USA_7_cities.txt">
+      <Filter>리소스 파일</Filter>
+    </Text>
+    <Text Include="AtoF.txt">
       <Filter>리소스 파일</Filter>
     </Text>
   </ItemGroup>

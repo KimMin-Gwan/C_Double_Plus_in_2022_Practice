@@ -1,0 +1,8 @@
+AtoF_Searching 6
+A B 3
+A C 5
+C D 4
+D E 7
+B E 5
+D F 4
+C F 5

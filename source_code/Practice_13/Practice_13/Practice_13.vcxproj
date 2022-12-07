@@ -130,11 +130,13 @@
     <ClInclude Include="BFS_Dijkstra.h" />
     <ClInclude Include="DepthFirstSearch.h" />
     <ClInclude Include="Graph.h" />
+    <ClInclude Include="MST_Prim.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BFS_Dijkstra.cpp" />
     <ClCompile Include="DepthFirstSearch.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MST_Prim.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="AtoF.txt" />

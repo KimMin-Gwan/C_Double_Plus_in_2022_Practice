@@ -14,12 +14,14 @@
 #include "Graph.h"
 #include "BFS_Dijkstra.h"
 #include "DepthFirstSearch.h"
+#include "MST_Prim.h"
 using namespace std;
 
 void fgetGraph(Graph* g, string fin_name);				// Get Graph data from file
 void test_DijkstraShortestPathSearch(Graph* pG);
 void test_BreadthFirstSearch(Graph* pG);
 void test_DepthFirstSearch(Graph* pG);
+void test_MinimumSpanningTree(Graph* pG);
 
 void main()
 {
@@ -33,7 +35,8 @@ void main()
 	while (1)
 	{
 		cout << ">>>Input Test Mode" << endl << "1 : Depth_First_Search(DFS)" << endl << "2 : Breadth_First_Search(BFS)" << endl
-			<< "3 : Dijkstra_Shortest_Path_Search" << endl << "0 : Quit" << endl << "Input Test Menu : ";
+			<< "3 : Dijkstra_Shortest_Path_Search" << endl << "4 : MinimumSpanninTree" << endl 
+			<< "0 : Quit" << endl << "Input Test Menu : ";
 		cin >> test_mode;		// input test mode
 		switch (test_mode)
 		{
@@ -45,6 +48,9 @@ void main()
 			break;
 		case 3:
 			test_DijkstraShortestPathSearch(&simpleGraph);
+			break;
+		case 4:
+			test_MinimumSpanningTree(&simpleGraph);
 			break;
 		case 0:
 			return;
@@ -212,5 +218,55 @@ void test_DepthFirstSearch(Graph* pG)
 	}
 }
 
+void test_MinimumSpanningTree(Graph* pG)
+{
+	cout << "\n*****************************************************************************" << endl;
+	cout << "Testing mstGraph..." << endl;
+	MinimumSpanningTree mstGraph(*pG);
+	VrtxList path;
+	cout << "\nTesting Mininmum Spanning Tree Algorithm" << endl;
+	mstGraph.initDistMtrx();
+	mstGraph.fprintDistMtrx(cout);
+	path.clear();
+	string start_nm, end_nm;
+	Vertex* pStart, * pEnd;
+	while (1)
+	{
+		cout << "Input start and end of path to search shortest path (. . to quit) : ";
+		cin >> start_nm;
+		if (start_nm == ".")
+			break;
+		cin >> end_nm;
+		pStart = pG->getVertex(start_nm);
+		pEnd = pG->getVertex(end_nm);
+		if (pStart == NULL || pEnd == NULL)
+		{
+			cout << "Error in start or end vertex name !!" << endl;
+			exit(1);
+		}
+		cout << "PrimJarnik Shortest Path Finding from " << pStart->getName() << " to " << pEnd->getName() << " .... " << endl;
+		mstGraph.PrimJarnikMST();
+		cout << "Path found by PrimJarnik from " << *pStart << " to " << *pEnd << " : ";
+		for (VrtxItor vItor = path.begin(); vItor != path.end(); ++vItor)
+		{
+			cout << *vItor;
+			if (*vItor != *pEnd)
+				cout << " -> ";
+		}
+		cout << endl;
+		pEnd = pG->getVertex(start_nm); // test with reverse direction
+		pStart = pG->getVertex(end_nm);
+		cout << "PrimJarnik Shortest Path Finding from " << pStart->getName() << " to " << pEnd->getName() << " .... " << endl;
+		mstGraph.PrimJarnikMST();
+		cout << "Path found by PrimJarnik from " << *pStart << " to " << *pEnd << " : ";
+		for (VrtxItor vItor = path.begin(); vItor != path.end(); ++vItor)
+		{
+			cout << *vItor;
+			if (*vItor != *pEnd)
+				cout << " -> ";
+		}
+		cout << endl;
+	}
+}
 
 

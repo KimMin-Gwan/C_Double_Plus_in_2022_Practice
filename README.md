@@ -38,16 +38,26 @@
     Header : Person.h, Student.h, Tarray.h, VectorHandler.h  
     Update : 22/10/17  
           
- 8. Completebinarytree and heapPriorityQueue data struct with Event  
+ 8. Completebinarytree and heapPriorityQueue data structure with Event  
     Header : Event.h, CompleteBinaryTree.h, HeapPrioQ.h, TA_Entry.h, T_Entry.h   
     Update : 22/11/03  
       
- 9. Completebinarytree and heapPriorityQueue data struct with multi-Thread  
+ 9. Completebinarytree and heapPriorityQueue data structure with multi-Thread  
     Header : Event.h, CompleteBinaryTree.h, HeapPrioQ.h, TA_Entry.h, T_Entry.h, Multi_thread.h, SimParam.h   
     Update : 22/11/06  
       
- 10. Double Linked Binary Search Tree data struct with Book  
+ 10. Double Linked Binary Search Tree data structure with Book  
     Header : BSTN.h, BST_RB.h, Book.h, Date.h, T_Array.h, T_Entry.h   
     Update : 22/11/15  
-      
-             
+            
+ 11. Hash map data structure  
+    Header : CyclicShiftHashCode.h, Entry.h, HashDict.h, HashMap.h, MyVoca.h, MyVocaList.h  
+    Update : 22/11/23  
+       
+ 12. Trie data structure  
+    Header : MyVoca.h, MyVocaList.h, Trie.h, TrieNode.h  
+    Update : 22/11/27 
+        
+ 13. Graph data structure with DFS, BFS, MST  
+    Header : BFS_Dijkstra.h, DepthFisrtSearch.h, Graph.h, MST_Prim.h  
+    Update : 22/12/05  

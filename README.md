@@ -30,7 +30,7 @@
     Update : 22/10/07  
       
  6. Programs that draw 8 shapes using ConsoleFixelFrame in Window.h  
-    Header : Shape.h, Color.h, Circle.h, Cylinder.cpp, Rectagnle.cpp, Star.h, PolyGon.h, Triangle.h,  
+    Header : Shape.h, Color.h, Circle.h, Cylinder.h, Rectagnle.h, Star.h, PolyGon.h, Triangle.h,  
              AngleArc.h, ConsolePixelDrawing.h   
     Update : 22/10/14  
       
